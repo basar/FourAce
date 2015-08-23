@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		071E9B5E1B71489200F0A123 /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071E9B5D1B71489200F0A123 /* ButtonNode.swift */; };
-		071E9B601B7610DA00F0A123 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071E9B5F1B7610DA00F0A123 /* Constants.swift */; };
 		071E9B621B7685F100F0A123 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071E9B611B7685F100F0A123 /* AlertView.swift */; };
-		071E9B6E1B7D1C1C00F0A123 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 071E9B701B7D1C1C00F0A123 /* Localizable.strings */; };
 		0737B1D81B52816A00C5B6E9 /* CardNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0737B1D71B52816A00C5B6E9 /* CardNode.swift */; };
 		0737B1DA1B52867000C5B6E9 /* CardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0737B1D91B52867000C5B6E9 /* CardStack.swift */; };
 		0737B1DC1B5594C600C5B6E9 /* DeckNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0737B1DB1B5594C600C5B6E9 /* DeckNode.swift */; };
@@ -20,6 +18,8 @@
 		073DFBB6198949B700AA02BF /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DFBB5198949B700AA02BF /* GameViewController.swift */; };
 		073DFBB9198949B700AA02BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073DFBB7198949B700AA02BF /* Main.storyboard */; };
 		073DFBC7198949B800AA02BF /* FourAceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DFBC6198949B800AA02BF /* FourAceTests.swift */; };
+		076451711B8A38DA0058136D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076451701B8A38DA0058136D /* Constants.swift */; };
+		076451791B8A3D9E0058136D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 076451761B8A3D9E0058136D /* Localizable.strings */; };
 		078298B01B597CD700DD92AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 078298AF1B597CD700DD92AF /* Images.xcassets */; };
 		07CB7BC51989514B00056F09 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB7BC41989514B00056F09 /* Card.swift */; };
 		07CB7BC7198951DF00056F09 /* FourAceGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB7BC6198951DF00056F09 /* FourAceGame.swift */; };
@@ -39,11 +39,7 @@
 
 /* Begin PBXFileReference section */
 		071E9B5D1B71489200F0A123 /* ButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
-		071E9B5F1B7610DA00F0A123 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../Constants.swift; sourceTree = "<group>"; };
 		071E9B611B7685F100F0A123 /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
-		071E9B6A1B7D170400F0A123 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
-		071E9B6F1B7D1C1C00F0A123 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		071E9B711B7D1C1E00F0A123 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0737B1D71B52816A00C5B6E9 /* CardNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardNode.swift; sourceTree = "<group>"; };
 		0737B1D91B52867000C5B6E9 /* CardStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStack.swift; sourceTree = "<group>"; };
 		0737B1DB1B5594C600C5B6E9 /* DeckNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckNode.swift; sourceTree = "<group>"; };
@@ -57,6 +53,9 @@
 		073DFBC0198949B800AA02BF /* FourAceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FourAceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		073DFBC5198949B800AA02BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		073DFBC6198949B800AA02BF /* FourAceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourAceTests.swift; sourceTree = "<group>"; };
+		076451701B8A38DA0058136D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		076451771B8A3D9E0058136D /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		076451781B8A3D9E0058136D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		078298AF1B597CD700DD92AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = FourAce/Images.xcassets; sourceTree = "<group>"; };
 		07CB7BC41989514B00056F09 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		07CB7BC6198951DF00056F09 /* FourAceGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourAceGame.swift; sourceTree = "<group>"; };
@@ -85,7 +84,6 @@
 		073DFBA1198949B700AA02BF = {
 			isa = PBXGroup;
 			children = (
-				071E9B701B7D1C1C00F0A123 /* Localizable.strings */,
 				078298AF1B597CD700DD92AF /* Images.xcassets */,
 				073DFBAC198949B700AA02BF /* FourAce */,
 				073DFBC3198949B800AA02BF /* FourAceTests */,
@@ -105,8 +103,9 @@
 		073DFBAC198949B700AA02BF /* FourAce */ = {
 			isa = PBXGroup;
 			children = (
+				076451761B8A3D9E0058136D /* Localizable.strings */,
 				07CB7BCA1989524900056F09 /* Util.swift */,
-				071E9B5F1B7610DA00F0A123 /* Constants.swift */,
+				076451701B8A38DA0058136D /* Constants.swift */,
 				07CB7BC31989512600056F09 /* Model */,
 				073DFBAF198949B700AA02BF /* AppDelegate.swift */,
 				073DFBB1198949B700AA02BF /* GameScene.sks */,
@@ -119,7 +118,6 @@
 				071E9B5D1B71489200F0A123 /* ButtonNode.swift */,
 				071E9B611B7685F100F0A123 /* AlertView.swift */,
 			);
-			name = FourAce;
 			path = FourAce;
 			sourceTree = "<group>";
 		};
@@ -137,7 +135,6 @@
 				073DFBC6198949B800AA02BF /* FourAceTests.swift */,
 				073DFBC4198949B800AA02BF /* Supporting Files */,
 			);
-			name = FourAceTests;
 			path = FourAceTests;
 			sourceTree = "<group>";
 		};
@@ -243,7 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				078298B01B597CD700DD92AF /* Images.xcassets in Resources */,
-				071E9B6E1B7D1C1C00F0A123 /* Localizable.strings in Resources */,
+				076451791B8A3D9E0058136D /* Localizable.strings in Resources */,
 				073DFBB2198949B700AA02BF /* GameScene.sks in Resources */,
 				073DFBB9198949B700AA02BF /* Main.storyboard in Resources */,
 			);
@@ -274,8 +271,8 @@
 				071E9B621B7685F100F0A123 /* AlertView.swift in Sources */,
 				07CB7BC51989514B00056F09 /* Card.swift in Sources */,
 				0737B1DC1B5594C600C5B6E9 /* DeckNode.swift in Sources */,
+				076451711B8A38DA0058136D /* Constants.swift in Sources */,
 				0737B1DA1B52867000C5B6E9 /* CardStack.swift in Sources */,
-				071E9B601B7610DA00F0A123 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,22 +295,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		071E9B701B7D1C1C00F0A123 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				071E9B6F1B7D1C1C00F0A123 /* en */,
-				071E9B711B7D1C1E00F0A123 /* tr */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
 		073DFBB7198949B700AA02BF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				073DFBB8198949B700AA02BF /* Base */,
-				071E9B6A1B7D170400F0A123 /* tr */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		076451761B8A3D9E0058136D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				076451771B8A3D9E0058136D /* tr */,
+				076451781B8A3D9E0058136D /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
