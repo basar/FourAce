@@ -20,6 +20,7 @@
 		073DFBC7198949B800AA02BF /* FourAceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DFBC6198949B800AA02BF /* FourAceTests.swift */; };
 		076451711B8A38DA0058136D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076451701B8A38DA0058136D /* Constants.swift */; };
 		076451791B8A3D9E0058136D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 076451761B8A3D9E0058136D /* Localizable.strings */; };
+		0764517B1B8A49410058136D /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0764517A1B8A49410058136D /* iAd.framework */; };
 		078298B01B597CD700DD92AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 078298AF1B597CD700DD92AF /* Images.xcassets */; };
 		07CB7BC51989514B00056F09 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB7BC41989514B00056F09 /* Card.swift */; };
 		07CB7BC7198951DF00056F09 /* FourAceGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB7BC6198951DF00056F09 /* FourAceGame.swift */; };
@@ -56,6 +57,7 @@
 		076451701B8A38DA0058136D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		076451771B8A3D9E0058136D /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		076451781B8A3D9E0058136D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0764517A1B8A49410058136D /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		078298AF1B597CD700DD92AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = FourAce/Images.xcassets; sourceTree = "<group>"; };
 		07CB7BC41989514B00056F09 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		07CB7BC6198951DF00056F09 /* FourAceGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourAceGame.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0764517B1B8A49410058136D /* iAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +87,7 @@
 		073DFBA1198949B700AA02BF = {
 			isa = PBXGroup;
 			children = (
+				0764517A1B8A49410058136D /* iAd.framework */,
 				078298AF1B597CD700DD92AF /* Images.xcassets */,
 				073DFBAC198949B700AA02BF /* FourAce */,
 				073DFBC3198949B800AA02BF /* FourAceTests */,

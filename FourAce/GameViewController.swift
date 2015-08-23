@@ -8,10 +8,14 @@
 
 import UIKit
 import SpriteKit
+import iAd
 
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, ADBannerViewDelegate {
 
+    
+
+    private var bannerView:ADBannerView?;
     
         
     override func viewDidLoad() {
@@ -19,7 +23,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         let scene = GameScene(size: view.bounds.size,viewController:self);
-        scene.scaleMode = .ResizeFill
+        scene.scaleMode = .Fill
         
         let skView = view as! SKView
         
@@ -27,6 +31,14 @@ class GameViewController: UIViewController {
         skView.showsNodeCount = false
         skView.ignoresSiblingOrder = true
         skView.presentScene(scene)
+        
+        bannerView = ADBannerView(frame: CGRectZero)
+        bannerView!.autoresizingMask = UIViewAutoresizing.FlexibleWidth;
+        bannerView!.delegate = self;
+        bannerView!.frame = CGRectMake(0,self.view.frame.height - bannerView!.frame.size.height,self.view.frame.size.width,bannerView!.frame.size.width);
+        
+        self.view.addSubview(bannerView!);
+
     }
 
     
@@ -36,5 +48,32 @@ class GameViewController: UIViewController {
     }
     **/
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent;
+    }
+
+
+    override func viewWillLayoutSubviews() {
+    }
+    
+    func bannerViewDidLoadAd(banner: ADBannerView!) {
+        bannerView!.hidden = false;
+    }
+    
+    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
+        bannerView!.hidden = true;
+    }
+    
+    func bannerViewActionShouldBegin(banner: ADBannerView!, willLeaveApplication willLeave: Bool) -> Bool {
+        return true;
+    }
+    
+    func bannerViewActionDidFinish(banner: ADBannerView!) {
+        
+    }
+
+    
+    
+
 
 }

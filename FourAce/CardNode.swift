@@ -70,13 +70,10 @@ class CardNode : SKSpriteNode {
         let touch = touches.first as! UITouch;
         let location  = touch.locationInNode(self)
         let touchedNode = nodeAtPoint(location)
-        if(touch.tapCount>1){
-            touchedNode.userInteractionEnabled = false
-            delegate?.cardNodeDidDoubleTapped(self)
-        }else{
-            let liftUp = SKAction.scaleTo(1.2, duration: 0.2)
-            touchedNode.runAction(liftUp,withKey:"pickup");
-        }
+        
+        let liftUp = SKAction.scaleTo(1.2, duration: 0.2)
+        touchedNode.runAction(liftUp,withKey:"pickup");
+        
         
     }
     
@@ -86,11 +83,15 @@ class CardNode : SKSpriteNode {
         let touch = touches.first as! UITouch;
         let location  = touch.locationInNode(self)
         let touchedNode = nodeAtPoint(location)
-        
-        if(touch.tapCount<2){
+        if(touch.tapCount>1){
+            touchedNode.userInteractionEnabled = false
+            delegate?.cardNodeDidDoubleTapped(self)
+        } else {
             delegate?.cardDidDropped(self)
         }
-
+        let liftUp = SKAction.scaleTo(1.0, duration: 0.2)
+        touchedNode.runAction(liftUp,withKey:"pickup");
+        
     }
     
 }
