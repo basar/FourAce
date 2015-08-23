@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  FortuneTeller
+
+  Created by basar cetinkaya on 13/08/15.
+  Copyright (c) 2015 basar cetinkaya. All rights reserved.
+*/
+"Warning" = "Warning";
+"Restart game?" = "Restart game?";
+"Ok" = "Ok";
+"Cancel" = "Cancel";
+"Game Over!" = "Game Over!";
+"game_over_message" = "The probability of your wish is %@%%. Try again?";
+"Score" = "Score";
+"how_to_play" = "How to play?";
+"how_to_play_instructions" = "Instructions goes here";

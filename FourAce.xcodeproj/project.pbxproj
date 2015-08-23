@@ -1,0 +1,496 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		071E9B5E1B71489200F0A123 /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071E9B5D1B71489200F0A123 /* ButtonNode.swift */; };
+		071E9B601B7610DA00F0A123 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071E9B5F1B7610DA00F0A123 /* Constants.swift */; };
+		071E9B621B7685F100F0A123 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071E9B611B7685F100F0A123 /* AlertView.swift */; };
+		071E9B6E1B7D1C1C00F0A123 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 071E9B701B7D1C1C00F0A123 /* Localizable.strings */; };
+		0737B1D81B52816A00C5B6E9 /* CardNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0737B1D71B52816A00C5B6E9 /* CardNode.swift */; };
+		0737B1DA1B52867000C5B6E9 /* CardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0737B1D91B52867000C5B6E9 /* CardStack.swift */; };
+		0737B1DC1B5594C600C5B6E9 /* DeckNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0737B1DB1B5594C600C5B6E9 /* DeckNode.swift */; };
+		073DFBB0198949B700AA02BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DFBAF198949B700AA02BF /* AppDelegate.swift */; };
+		073DFBB2198949B700AA02BF /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 073DFBB1198949B700AA02BF /* GameScene.sks */; };
+		073DFBB4198949B700AA02BF /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DFBB3198949B700AA02BF /* GameScene.swift */; };
+		073DFBB6198949B700AA02BF /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DFBB5198949B700AA02BF /* GameViewController.swift */; };
+		073DFBB9198949B700AA02BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073DFBB7198949B700AA02BF /* Main.storyboard */; };
+		073DFBC7198949B800AA02BF /* FourAceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DFBC6198949B800AA02BF /* FourAceTests.swift */; };
+		078298B01B597CD700DD92AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 078298AF1B597CD700DD92AF /* Images.xcassets */; };
+		07CB7BC51989514B00056F09 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB7BC41989514B00056F09 /* Card.swift */; };
+		07CB7BC7198951DF00056F09 /* FourAceGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB7BC6198951DF00056F09 /* FourAceGame.swift */; };
+		07CB7BCB1989524900056F09 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB7BCA1989524900056F09 /* Util.swift */; };
+		07CB7BCD1989598500056F09 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB7BCC1989598500056F09 /* Deck.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		073DFBC1198949B800AA02BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 073DFBA2198949B700AA02BF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 073DFBA9198949B700AA02BF;
+			remoteInfo = FourAce;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		071E9B5D1B71489200F0A123 /* ButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
+		071E9B5F1B7610DA00F0A123 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../Constants.swift; sourceTree = "<group>"; };
+		071E9B611B7685F100F0A123 /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		071E9B6A1B7D170400F0A123 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
+		071E9B6F1B7D1C1C00F0A123 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		071E9B711B7D1C1E00F0A123 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0737B1D71B52816A00C5B6E9 /* CardNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardNode.swift; sourceTree = "<group>"; };
+		0737B1D91B52867000C5B6E9 /* CardStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStack.swift; sourceTree = "<group>"; };
+		0737B1DB1B5594C600C5B6E9 /* DeckNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckNode.swift; sourceTree = "<group>"; };
+		073DFBAA198949B700AA02BF /* FourAce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FourAce.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		073DFBAE198949B700AA02BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		073DFBAF198949B700AA02BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		073DFBB1198949B700AA02BF /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		073DFBB3198949B700AA02BF /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		073DFBB5198949B700AA02BF /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		073DFBB8198949B700AA02BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		073DFBC0198949B800AA02BF /* FourAceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FourAceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		073DFBC5198949B800AA02BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		073DFBC6198949B800AA02BF /* FourAceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourAceTests.swift; sourceTree = "<group>"; };
+		078298AF1B597CD700DD92AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = FourAce/Images.xcassets; sourceTree = "<group>"; };
+		07CB7BC41989514B00056F09 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		07CB7BC6198951DF00056F09 /* FourAceGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourAceGame.swift; sourceTree = "<group>"; };
+		07CB7BCA1989524900056F09 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		07CB7BCC1989598500056F09 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		073DFBA7198949B700AA02BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		073DFBBD198949B800AA02BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		073DFBA1198949B700AA02BF = {
+			isa = PBXGroup;
+			children = (
+				071E9B701B7D1C1C00F0A123 /* Localizable.strings */,
+				078298AF1B597CD700DD92AF /* Images.xcassets */,
+				073DFBAC198949B700AA02BF /* FourAce */,
+				073DFBC3198949B800AA02BF /* FourAceTests */,
+				073DFBAB198949B700AA02BF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		073DFBAB198949B700AA02BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				073DFBAA198949B700AA02BF /* FourAce.app */,
+				073DFBC0198949B800AA02BF /* FourAceTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		073DFBAC198949B700AA02BF /* FourAce */ = {
+			isa = PBXGroup;
+			children = (
+				07CB7BCA1989524900056F09 /* Util.swift */,
+				071E9B5F1B7610DA00F0A123 /* Constants.swift */,
+				07CB7BC31989512600056F09 /* Model */,
+				073DFBAF198949B700AA02BF /* AppDelegate.swift */,
+				073DFBB1198949B700AA02BF /* GameScene.sks */,
+				073DFBB3198949B700AA02BF /* GameScene.swift */,
+				073DFBB5198949B700AA02BF /* GameViewController.swift */,
+				073DFBB7198949B700AA02BF /* Main.storyboard */,
+				073DFBAD198949B700AA02BF /* Supporting Files */,
+				0737B1D71B52816A00C5B6E9 /* CardNode.swift */,
+				0737B1DB1B5594C600C5B6E9 /* DeckNode.swift */,
+				071E9B5D1B71489200F0A123 /* ButtonNode.swift */,
+				071E9B611B7685F100F0A123 /* AlertView.swift */,
+			);
+			name = FourAce;
+			path = FourAce;
+			sourceTree = "<group>";
+		};
+		073DFBAD198949B700AA02BF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				073DFBAE198949B700AA02BF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		073DFBC3198949B800AA02BF /* FourAceTests */ = {
+			isa = PBXGroup;
+			children = (
+				073DFBC6198949B800AA02BF /* FourAceTests.swift */,
+				073DFBC4198949B800AA02BF /* Supporting Files */,
+			);
+			name = FourAceTests;
+			path = FourAceTests;
+			sourceTree = "<group>";
+		};
+		073DFBC4198949B800AA02BF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				073DFBC5198949B800AA02BF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		07CB7BC31989512600056F09 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				07CB7BCC1989598500056F09 /* Deck.swift */,
+				07CB7BC41989514B00056F09 /* Card.swift */,
+				07CB7BC6198951DF00056F09 /* FourAceGame.swift */,
+				0737B1D91B52867000C5B6E9 /* CardStack.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		073DFBA9198949B700AA02BF /* FourAce */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 073DFBCA198949B800AA02BF /* Build configuration list for PBXNativeTarget "FourAce" */;
+			buildPhases = (
+				073DFBA6198949B700AA02BF /* Sources */,
+				073DFBA7198949B700AA02BF /* Frameworks */,
+				073DFBA8198949B700AA02BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FourAce;
+			productName = FourAce;
+			productReference = 073DFBAA198949B700AA02BF /* FourAce.app */;
+			productType = "com.apple.product-type.application";
+		};
+		073DFBBF198949B800AA02BF /* FourAceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 073DFBCD198949B800AA02BF /* Build configuration list for PBXNativeTarget "FourAceTests" */;
+			buildPhases = (
+				073DFBBC198949B800AA02BF /* Sources */,
+				073DFBBD198949B800AA02BF /* Frameworks */,
+				073DFBBE198949B800AA02BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				073DFBC2198949B800AA02BF /* PBXTargetDependency */,
+			);
+			name = FourAceTests;
+			productName = FourAceTests;
+			productReference = 073DFBC0198949B800AA02BF /* FourAceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		073DFBA2198949B700AA02BF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "basar cetinkaya";
+				TargetAttributes = {
+					073DFBA9198949B700AA02BF = {
+						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = RPPD7BUGBS;
+					};
+					073DFBBF198949B800AA02BF = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 073DFBA9198949B700AA02BF;
+					};
+				};
+			};
+			buildConfigurationList = 073DFBA5198949B700AA02BF /* Build configuration list for PBXProject "FourAce" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				tr,
+			);
+			mainGroup = 073DFBA1198949B700AA02BF;
+			productRefGroup = 073DFBAB198949B700AA02BF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				073DFBA9198949B700AA02BF /* FourAce */,
+				073DFBBF198949B800AA02BF /* FourAceTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		073DFBA8198949B700AA02BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				078298B01B597CD700DD92AF /* Images.xcassets in Resources */,
+				071E9B6E1B7D1C1C00F0A123 /* Localizable.strings in Resources */,
+				073DFBB2198949B700AA02BF /* GameScene.sks in Resources */,
+				073DFBB9198949B700AA02BF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		073DFBBE198949B800AA02BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		073DFBA6198949B700AA02BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07CB7BCD1989598500056F09 /* Deck.swift in Sources */,
+				0737B1D81B52816A00C5B6E9 /* CardNode.swift in Sources */,
+				071E9B5E1B71489200F0A123 /* ButtonNode.swift in Sources */,
+				07CB7BC7198951DF00056F09 /* FourAceGame.swift in Sources */,
+				073DFBB4198949B700AA02BF /* GameScene.swift in Sources */,
+				073DFBB6198949B700AA02BF /* GameViewController.swift in Sources */,
+				07CB7BCB1989524900056F09 /* Util.swift in Sources */,
+				073DFBB0198949B700AA02BF /* AppDelegate.swift in Sources */,
+				071E9B621B7685F100F0A123 /* AlertView.swift in Sources */,
+				07CB7BC51989514B00056F09 /* Card.swift in Sources */,
+				0737B1DC1B5594C600C5B6E9 /* DeckNode.swift in Sources */,
+				0737B1DA1B52867000C5B6E9 /* CardStack.swift in Sources */,
+				071E9B601B7610DA00F0A123 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		073DFBBC198949B800AA02BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				073DFBC7198949B800AA02BF /* FourAceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		073DFBC2198949B800AA02BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 073DFBA9198949B700AA02BF /* FourAce */;
+			targetProxy = 073DFBC1198949B800AA02BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		071E9B701B7D1C1C00F0A123 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				071E9B6F1B7D1C1C00F0A123 /* en */,
+				071E9B711B7D1C1E00F0A123 /* tr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		073DFBB7198949B700AA02BF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				073DFBB8198949B700AA02BF /* Base */,
+				071E9B6A1B7D170400F0A123 /* tr */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		073DFBC8198949B800AA02BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		073DFBC9198949B800AA02BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		073DFBCB198949B800AA02BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = FourAce/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = FourAce;
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		073DFBCC198949B800AA02BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = FourAce/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = FourAce;
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		073DFBCE198949B800AA02BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FourAce.app/FourAce";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FourAceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = FourAceTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		073DFBCF198949B800AA02BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FourAce.app/FourAce";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FourAceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = FourAceTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		073DFBA5198949B700AA02BF /* Build configuration list for PBXProject "FourAce" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				073DFBC8198949B800AA02BF /* Debug */,
+				073DFBC9198949B800AA02BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		073DFBCA198949B800AA02BF /* Build configuration list for PBXNativeTarget "FourAce" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				073DFBCB198949B800AA02BF /* Debug */,
+				073DFBCC198949B800AA02BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		073DFBCD198949B800AA02BF /* Build configuration list for PBXNativeTarget "FourAceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				073DFBCE198949B800AA02BF /* Debug */,
+				073DFBCF198949B800AA02BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 073DFBA2198949B700AA02BF /* Project object */;
+}
