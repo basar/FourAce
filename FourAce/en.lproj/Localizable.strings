@@ -13,4 +13,4 @@
 "game_over_message" = "The probability of your wish is %@%%. Try again?";
 "Score" = "Score";
 "how_to_play" = "How to play?";
-"how_to_play_instructions" = "Instructions goes here";
+"how_to_play_instructions" = "The biggest card eliminates the small card in the same suit. Take the four aces cards side by side on the top. See the probability!";

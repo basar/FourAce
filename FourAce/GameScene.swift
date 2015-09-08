@@ -38,7 +38,7 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
         backgroundNode = SKSpriteNode(imageNamed: "green_background");
         restartButton = ButtonNode(imageNamed: "restart_button", width:Constants.restartButtonWidth, height: Constants.restartButtonHeight)
         infoButton = ButtonNode(imageNamed: "info_button", width:Constants.infoButtonWidth, height: Constants.infoButtonHeight)
-        deckButton = ButtonNode(imageNamed: "red_deck", width: Constants.deckWidth, height: Constants.cardHeight)
+        deckButton = ButtonNode(imageNamed: "red_deck_2", width: Constants.deckWidth, height: Constants.cardHeight)
         
         constantScoreLabel = SKLabelNode();
     

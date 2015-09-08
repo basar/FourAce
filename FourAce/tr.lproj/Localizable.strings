@@ -13,4 +13,4 @@
 "game_over_message" = "Dileğinin gerçekleşme olasılığı: %@%%. Tekrar dene?";
 "Score" = "Skor";
 "how_to_play" = "Nasıl oynanır?";
-"how_to_play_instructions" = "Instructions goes here";
+"how_to_play_instructions" = "Aynı seri kartlardan büyük olan küçük olanı götürür. Dört ası en üstde yan yana getir ihtimali gör!";

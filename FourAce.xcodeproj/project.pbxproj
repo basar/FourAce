@@ -210,7 +210,6 @@
 				TargetAttributes = {
 					073DFBA9198949B700AA02BF = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = RPPD7BUGBS;
 					};
 					073DFBBF198949B800AA02BF = {
 						CreatedOnToolsVersion = 6.0;
