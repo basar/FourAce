@@ -40,7 +40,7 @@ class CardNode : SKSpriteNode {
         self.card = card;
         self.frontTexture=SKTexture(imageNamed: imageNamed)
         self.backTexture = SKTexture(imageNamed: backImageName)
-        super.init(texture:frontTexture,color:nil,size:CGSizeMake(width,height))
+        super.init(texture:frontTexture,color:UIColor(),size:CGSizeMake(width,height))
         
         userInteractionEnabled=true
     }
@@ -54,20 +54,20 @@ class CardNode : SKSpriteNode {
         self.texture = backTexture;
     }
     
-    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         for obj in touches{
-            let touch = obj as! UITouch
-            let location  = touch.locationInNode(self.parent)
+            let touch = obj 
+            let location  = touch.locationInNode(self.parent!)
             let touchedNode = nodeAtPoint(location);
             touchedNode.position=location
             touchedNode.zPosition=Constants.maxZIndex
         }
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-        let touch = touches.first as! UITouch;
+        let touch = touches.first as UITouch!;
         let location  = touch.locationInNode(self)
         let touchedNode = nodeAtPoint(location)
         
@@ -78,9 +78,9 @@ class CardNode : SKSpriteNode {
     }
     
     
-    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-        let touch = touches.first as! UITouch;
+        let touch = touches.first as UITouch!;
         let location  = touch.locationInNode(self)
         let touchedNode = nodeAtPoint(location)
         if(touch.tapCount>1){

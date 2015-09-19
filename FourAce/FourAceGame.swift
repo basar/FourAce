@@ -32,7 +32,7 @@ protocol FourAceGameDelegate {
     
 }
 
-class FourAceGame:Printable {
+class FourAceGame:CustomStringConvertible {
     
     static let instance = FourAceGame()
     
@@ -60,7 +60,7 @@ class FourAceGame:Printable {
     func dealCardsToStacks(){
         
         if(deck.currentCount==0){
-            println("Deck is empty!")
+            print("Deck is empty!")
             return
         }
         
@@ -89,8 +89,8 @@ class FourAceGame:Printable {
     func isCardMovableFromStackToOtherStack(stackIndex index:Int, otherStackIndex other:Int)->Bool {
         
         var result = true
-        var stack = stacks[index]
-        var otherStack=stacks[other]
+        let stack = stacks[index]
+        let otherStack=stacks[other]
         
         if stack.isEmpty || !otherStack.isEmpty {
             result = false
@@ -106,8 +106,8 @@ class FourAceGame:Printable {
         
         if isCardMovableFromStackToOtherStack(stackIndex: index, otherStackIndex: other) {
             
-            var fromStack:CardStack = stacks[index];
-            var toStack:CardStack = stacks[other];
+            let fromStack:CardStack = stacks[index];
+            let toStack:CardStack = stacks[other];
             moved = fromStack.pop()
             toStack.push(moved!)
             delegate?.cardDidMoveFromStackToOtherStack(moved!, fromCardStack: fromStack, toCardStack: toStack)
@@ -126,20 +126,20 @@ class FourAceGame:Printable {
         
         var result = false
         
-        var stack = stacks[index]
+        let stack = stacks[index]
         
         if stack.isEmpty {
             return result
         }
         
-        var removed:Card? = stack.peek()
+        let removed:Card? = stack.peek()
         
         for var i:Int = 0;i<stacks.count;i++ {
             
             if(i != index){
-                var otherStack = stacks[i]
+                let otherStack = stacks[i]
                 if !otherStack.isEmpty {
-                    var otherCard = otherStack.peek()
+                    let otherCard = otherStack.peek()
                     if(otherCard > removed){
                         result = true
                         break
@@ -157,7 +157,7 @@ class FourAceGame:Printable {
         
         
         if isCardRemovableFromStack(stackIndex:index) {
-            var card = stacks[index].peek()
+            let card = stacks[index].peek()
             delegate?.cardWillPopToStack(card!,cardStack:stacks[index])
             removed = stacks[index].pop()
             delegate?.cardDidPopToStack(card!,cardStack:stacks[index])
@@ -181,7 +181,7 @@ class FourAceGame:Printable {
         
         for stack:CardStack in stacks {
             
-            var card = stack.peek();
+            let card = stack.peek();
             if(card == nil){
                 break
             }
@@ -198,7 +198,7 @@ class FourAceGame:Printable {
     private func controlWhetherGameOver() {
         
         if(deck.currentCount==0){
-            var result = isAnyMoveExist()
+            let result = isAnyMoveExist()
             if (!result){
                 delegate?.gameDidOver()
             }
@@ -212,7 +212,7 @@ class FourAceGame:Printable {
             var result:String = String()
             
             for var i:Int=0;i<stacks.count;i++ {
-                var stack = stacks[i]
+                let stack = stacks[i]
                 result = result + stack.description + "\n**************";
                 if(i != stacks.count-1){
                     result = result + "\n";
@@ -232,7 +232,7 @@ class FourAceGame:Printable {
             for stack in stacks {
                 var cards:[Card] = stack.cards;
                 for var i:Int = 0;i<cards.count;i++ {
-                    var card:Card=cards[i];
+                    let card:Card=cards[i];
                     if(card.value == .Ace && i==0){
                         score=score+25;
                         continue

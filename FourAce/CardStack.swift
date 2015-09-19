@@ -9,7 +9,7 @@
 import Foundation
 
 
-class CardStack:Printable {
+class CardStack:CustomStringConvertible {
     
     var cards:[Card]
     
@@ -30,7 +30,7 @@ class CardStack:Printable {
             var desc = String()
             
             for var i=size()-1;i>=0;i-- {
-                var card = cards[i]
+                let card = cards[i]
                 desc = desc + card.description
                 if i != 0 {
                     desc = desc + "\n"
@@ -48,7 +48,7 @@ class CardStack:Printable {
     }
     
     func pop()->Card {
-        var card = cards.removeLast()
+        let card = cards.removeLast()
         card.stackIndex = -1
         return card
     }
@@ -57,7 +57,7 @@ class CardStack:Printable {
         if(size()==0){
             return nil
         }
-        var card = cards[size()-1]
+        let card = cards[size()-1]
         return card
     }
     

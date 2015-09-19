@@ -24,8 +24,8 @@ class DeckNode : SKSpriteNode {
     
     init(imageNamed:String,width:CGFloat,height:CGFloat){
         
-        var deckTexture = SKTexture(imageNamed: imageNamed)
-        super.init(texture:deckTexture,color:nil,size:CGSizeMake(width,height))
+        let deckTexture = SKTexture(imageNamed: imageNamed)
+        super.init(texture:deckTexture,color:UIColor(),size:CGSizeMake(width,height))
     
         userInteractionEnabled=true
     }
@@ -35,11 +35,10 @@ class DeckNode : SKSpriteNode {
     }
     
     
-    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-        let touch = touches.first as! UITouch;
-        let location  = touch.locationInNode(self.parent)
-        let touchedNode = nodeAtPoint(location)
+        let touch = touches.first as UITouch?;
+        let location  = touch!.locationInNode(self.parent!)
         if (self.containsPoint(location)){
             delegate?.deckNodeDidTapped(self)
         }

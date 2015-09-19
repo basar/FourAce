@@ -9,7 +9,7 @@
 import Foundation
 
 
-enum CardSuit:Int,Printable {
+enum CardSuit:Int,CustomStringConvertible {
     
     case Spades,Hearths,Diamonds,Clubs
     
@@ -29,7 +29,7 @@ enum CardSuit:Int,Printable {
     }
 }
 
-enum CardValue : Int,Printable {
+enum CardValue : Int,CustomStringConvertible {
     
     case Ace = 1,Two,Three,Four,Five,Six,Seven,Eight,Nine,Ten,Jack,Queen,King
     
@@ -97,7 +97,7 @@ func < (left:Card,right:Card)-> Bool {
 }
 
 
-class Card:Printable,Equatable,Comparable {
+class Card:CustomStringConvertible,Equatable,Comparable {
     
     let value:CardValue
     let suit:CardSuit

@@ -23,7 +23,7 @@ protocol DeckProtocol {
 }
 
 
-class Deck:DeckProtocol,Printable {
+class Deck:DeckProtocol,CustomStringConvertible {
     
     var cards:[Card]
     
@@ -33,7 +33,7 @@ class Deck:DeckProtocol,Printable {
         
         for suit in CardSuit.allValues {
             for value in CardValue.allValues {
-                var card:Card = Card(value: value, suit: suit)
+                let card:Card = Card(value: value, suit: suit)
                 cards.append(card)
             }
         }

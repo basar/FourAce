@@ -14,7 +14,7 @@ import SpriteKit
 
 
 func log(logMessage:String,functionName:String = __FUNCTION__){
-    println("\(functionName): \(logMessage)");
+    print("\(functionName): \(logMessage)");
 }
 
 
@@ -33,7 +33,7 @@ extension Array {
     mutating func shuffle(){
         
         for var i=0;i<count;i++ {
-            sort { (_,_) in arc4random() < arc4random() }
+            sortInPlace { (_,_) in arc4random() < arc4random() }
         }
         
     }

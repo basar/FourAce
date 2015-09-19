@@ -22,7 +22,8 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
         
         super.viewDidLoad()
         
-        let scene = GameScene(size: view.bounds.size,viewController:self);
+        let screenSize:CGSize = UIScreen.mainScreen().bounds.size;
+        let scene = GameScene(size: screenSize,viewController:self);
         scene.scaleMode = .Fill
         
         let skView = view as! SKView

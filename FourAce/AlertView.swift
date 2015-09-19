@@ -37,10 +37,9 @@ class AlertView : NSObject, UIAlertViewDelegate {
         self.okCallback = okCallback;
         self.cancelCallback = cancelCallback;
         
-        if let ios8Alert: AnyClass = NSClassFromString("UIAlertController") {
+        if #available(iOS 8.0, *){
             
             let alert: UIAlertController = UIAlertController(title: self.title, message: self.message, preferredStyle: .Alert)
-            
             alert.addAction(UIAlertAction(title: "Ok".localized, style: .Default, handler: { action in
                 self.okCallback?()
             }))
