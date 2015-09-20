@@ -66,6 +66,7 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
     override func didMoveToView(view: SKView) {
         
         backgroundNode.position=CGPointMake(self.size.width/2, self.size.height/2);
+        backgroundNode.zPosition = -1;
         addChild(backgroundNode)
     
         constantScoreLabel.position = Constants.scoreLabelPosition;
@@ -82,17 +83,19 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
         deckNodePlaceHolder.size = CGSize(width: Constants.deckWidth + Constants.placeHolderMargin,
             height: Constants.deckHeight + Constants.placeHolderMargin)
         deckNodePlaceHolder.position = Constants.constantDeckPosition;
+        deckNodePlaceHolder.zPosition = 0;
         addChild(deckNodePlaceHolder);
         
         let trashNode = SKSpriteNode(imageNamed: "card_place_holder");
         trashNode.size = CGSize(width: Constants.trashWidth + Constants.placeHolderMargin,
             height: Constants.trashHeight + Constants.placeHolderMargin);
-        
+        trashNode.zPosition = 0;
         trashNode.position = Constants.trashPosition;
         addChild(trashNode)
         
         deckButton.position = Constants.constantDeckPosition
         deckButton.delegate = self
+        deckButton.zPosition = 1;
         addChild(deckButton)
         
         restartButton.position = Constants.restartButtonPosition
@@ -102,6 +105,7 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
         
         infoButton.position = Constants.infoButtonPosition
         infoButton.delegate = self
+        infoButton.zPosition = 0;
         addChild(infoButton)
         
         for var i:Int=0;i<4;i++ {

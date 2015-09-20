@@ -47,7 +47,7 @@ class Constants {
     static var deckHeight:CGFloat {
         get{
             if Util.isIPhone4OrLess() {
-                return 50;
+                return 65;
             }
             return 75;
         }
@@ -150,7 +150,7 @@ class Constants {
     static var trashWidth: CGFloat {
         get{
             if Util.isIPhone4OrLess() {
-                return 50;
+                return 55;
             }
             return 60;
         }
@@ -159,7 +159,7 @@ class Constants {
     static var trashHeight: CGFloat {
         get{
             if Util.isIPhone4OrLess() {
-                return 60;
+                return 65;
             }
             return 75;
         }
