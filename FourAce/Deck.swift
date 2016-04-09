@@ -70,7 +70,7 @@ class Deck:DeckProtocol,CustomStringConvertible {
         }
         
         var result=[Card]()
-        for var i=0;i<count;i++ {
+        for _ in 0 ..< count {
             result.append(dealCard()!)
         }
         return result

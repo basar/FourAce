@@ -65,7 +65,7 @@ class FourAceGame:CustomStringConvertible {
         }
         
         var dealedCards:[Card] = [Card]()
-        for var i:Int=0;i<4;i++ {
+        for i:Int in 0 ..< 4 {
             dealedCards.insert(deck.dealCard()!, atIndex:i)
         }
         
@@ -73,7 +73,8 @@ class FourAceGame:CustomStringConvertible {
        
         var index = 0
         for cardStack in stacks {
-            cardStack.push(dealedCards[index++])
+            cardStack.push(dealedCards[index])
+            index+=1
         }
         
         delegate?.cardsDidDealToStacks(dealedCards,cardStacks: stacks)
@@ -134,7 +135,7 @@ class FourAceGame:CustomStringConvertible {
         
         let removed:Card? = stack.peek()
         
-        for var i:Int = 0;i<stacks.count;i++ {
+        for i:Int in 0 ..< stacks.count {
             
             if(i != index){
                 let otherStack = stacks[i]
@@ -211,7 +212,7 @@ class FourAceGame:CustomStringConvertible {
         get{
             var result:String = String()
             
-            for var i:Int=0;i<stacks.count;i++ {
+            for i:Int in 0 ..< stacks.count {
                 let stack = stacks[i]
                 result = result + stack.description + "\n**************";
                 if(i != stacks.count-1){
@@ -231,7 +232,7 @@ class FourAceGame:CustomStringConvertible {
         
             for stack in stacks {
                 var cards:[Card] = stack.cards;
-                for var i:Int = 0;i<cards.count;i++ {
+                for i:Int in 0 ..< cards.count {
                     let card:Card=cards[i];
                     if(card.value == .Ace && i==0){
                         score=score+25;

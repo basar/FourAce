@@ -29,7 +29,7 @@ class CardStack:CustomStringConvertible {
         get {
             var desc = String()
             
-            for var i=size()-1;i>=0;i-- {
+            for var i=size()-1;i>=0;i -= 1 {
                 let card = cards[i]
                 desc = desc + card.description
                 if i != 0 {

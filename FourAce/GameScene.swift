@@ -52,7 +52,7 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
 
         super.init(size: size)
         
-        for var i:Int=0;i<4;i++ {
+        for i:Int in 0 ..< 4 {
             stackRects.insert(CGRectMake(Constants.stacksXPositions[i], Constants.stacksY, Constants.cardWidth, Constants.cardHeight), atIndex: i)
         }
         
@@ -100,6 +100,7 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
         
         restartButton.position = Constants.restartButtonPosition
         restartButton.delegate = self
+        restartButton.zPosition = 0;
         addChild(restartButton)
         
         
@@ -108,7 +109,7 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
         infoButton.zPosition = 0;
         addChild(infoButton)
         
-        for var i:Int=0;i<4;i++ {
+        for i:Int in 0 ..< 4 {
             let placeHolder = SKSpriteNode(imageNamed: "card_place_holder");
             placeHolder.position = CGPointMake(Constants.stacksXPositions[i], Constants.stacksY)
             placeHolder.size = CGSize(width:Constants.cardWidth + Constants.placeHolderMargin,
@@ -217,9 +218,7 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
     
     func gameDidOver() {
     
-        print("Game over!");
         // Delay 1 seconds
-        
         performAfterDelay(afterDelay: 1, block: {
             self.gameOverAlertView.message = String(format:"game_over_message".localized,"\(FourAceGame.instance.gameScore)");
             self.gameOverAlertView.show({
@@ -313,7 +312,7 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
             
             var movable:Bool=false;
             
-            for var i:Int=0;i<stackRects.count;i++ {
+            for i:Int in 0 ..< stackRects.count {
                 
                 if(isCardNodeIntersectWithRect(cardNode, rect: stackRects[i])){
                     let stackIndex = cardNode.card.stackIndex;
