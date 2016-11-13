@@ -11,19 +11,19 @@ import Foundation
 
 enum CardSuit:Int,CustomStringConvertible {
     
-    case Spades,Hearths,Diamonds,Clubs
+    case spades,hearths,diamonds,clubs
     
-    static let allValues = [Spades,Hearths,Diamonds,Clubs]
+    static let allValues = [spades,hearths,diamonds,clubs]
     
     var description:String {
         switch self {
-        case .Spades:
+        case .spades:
             return "spades"
-        case .Hearths:
+        case .hearths:
             return "hearts"
-        case .Diamonds:
+        case .diamonds:
             return "diamonds"
-        case .Clubs:
+        case .clubs:
             return "clubs"
         }
     }
@@ -31,37 +31,37 @@ enum CardSuit:Int,CustomStringConvertible {
 
 enum CardValue : Int,CustomStringConvertible {
     
-    case Ace = 1,Two,Three,Four,Five,Six,Seven,Eight,Nine,Ten,Jack,Queen,King
+    case ace = 1,two,three,four,five,six,seven,eight,nine,ten,jack,queen,king
     
-    static let allValues = [Ace,Two,Three,Four,Five,Six,Seven,Eight,Nine,Ten,Jack,Queen,King]
+    static let allValues = [ace,two,three,four,five,six,seven,eight,nine,ten,jack,queen,king]
     
     var description:String {
         switch self {
-        case .Ace:
+        case .ace:
             return "a"
-        case .Two:
+        case .two:
             return "2"
-        case .Three:
+        case .three:
             return "3"
-        case .Four:
+        case .four:
             return "4"
-        case .Five:
+        case .five:
             return "5"
-        case .Six:
+        case .six:
             return "6"
-        case .Seven:
+        case .seven:
             return "7"
-        case .Eight:
+        case .eight:
             return "8"
-        case .Nine:
+        case .nine:
             return "9"
-        case .Ten:
+        case .ten:
             return "10"
-        case .Jack:
+        case .jack:
             return "j"
-        case .Queen:
+        case .queen:
             return "q"
-        case .King:
+        case .king:
             return "k"
         }
     }
@@ -69,11 +69,11 @@ enum CardValue : Int,CustomStringConvertible {
 
 func < (left:CardValue,right:CardValue)->Bool {
     
-    if(right==CardValue.Ace){
+    if(right==CardValue.ace){
         return true
     }
     
-    if(left == CardValue.Ace){
+    if(left == CardValue.ace){
         return false
     }
     

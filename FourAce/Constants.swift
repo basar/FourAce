@@ -58,9 +58,9 @@ class Constants {
     static var constantDeckPosition:CGPoint {
         get{
             if Util.isIPhone4OrLess(){
-                return CGPointMake(270, 425);
+                return CGPoint(x: 270, y: 425);
             }
-            return CGPointMake(270, 490);
+            return CGPoint(x: 270, y: 490);
         }
     }
     
@@ -86,9 +86,9 @@ class Constants {
     static var restartButtonPosition:CGPoint {
         get{
             if Util.isIPhone4OrLess() {
-                return CGPointMake(75, 440);
+                return CGPoint(x: 75, y: 440);
             }
-            return CGPointMake(75, 520);
+            return CGPoint(x: 75, y: 520);
         }
     }
     
@@ -113,9 +113,9 @@ class Constants {
     static var infoButtonPosition:CGPoint {
         get{
             if Util.isIPhone4OrLess() {
-                return CGPointMake(30, 440);
+                return CGPoint(x: 30, y: 440);
             }
-            return CGPointMake(30, 520)
+            return CGPoint(x: 30, y: 520)
         }
     }
     
@@ -141,9 +141,9 @@ class Constants {
     static var trashPosition:CGPoint {
         get{
             if Util.isIPhone4OrLess() {
-                return CGPointMake(175, 425)
+                return CGPoint(x: 175, y: 425)
             }
-            return CGPointMake(175, 490)
+            return CGPoint(x: 175, y: 490)
         }
     }
     
@@ -169,9 +169,9 @@ class Constants {
     static var scoreLabelPosition:CGPoint {
         get{
             if Util.isIPhone4OrLess() {
-                return CGPointMake(15, 410);
+                return CGPoint(x: 15, y: 410);
             }
-            return CGPointMake(15, 480);
+            return CGPoint(x: 15, y: 480);
         }
     }
     

@@ -11,7 +11,7 @@ import SpriteKit
 
 protocol DeckNodeDelegate {
     
-    func deckNodeDidTapped(deckNode:DeckNode)
+    func deckNodeDidTapped(_ deckNode:DeckNode)
     
 }
 
@@ -25,9 +25,9 @@ class DeckNode : SKSpriteNode {
     init(imageNamed:String,width:CGFloat,height:CGFloat){
         
         let deckTexture = SKTexture(imageNamed: imageNamed)
-        super.init(texture:deckTexture,color:UIColor(),size:CGSizeMake(width,height))
+        super.init(texture:deckTexture,color:UIColor(),size:CGSize(width: width,height: height))
     
-        userInteractionEnabled=true
+        isUserInteractionEnabled=true
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -35,11 +35,11 @@ class DeckNode : SKSpriteNode {
     }
     
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         let touch = touches.first as UITouch?;
-        let location  = touch!.locationInNode(self.parent!)
-        if (self.containsPoint(location)){
+        let location  = touch!.location(in: self.parent!)
+        if (self.contains(location)){
             delegate?.deckNodeDidTapped(self)
         }
         

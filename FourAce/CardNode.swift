@@ -11,23 +11,25 @@ import SpriteKit
 
 protocol CardNodeDelegate {
     
-    func cardNodeDidDoubleTapped(cardNode:CardNode)
+    func cardNodeDidDoubleTapped(_ cardNode:CardNode)
     
-    func cardDidDropped(cardNode:CardNode)
+    func cardDidDropped(_ cardNode:CardNode)
+    
+    func cardMoving(_ cardNode:CardNode)
     
 }
 
 class CardNode : SKSpriteNode {
     
-    private var frontTexture:SKTexture;
+    var frontTexture:SKTexture;
     
-    private var backTexture:SKTexture;
+    var backTexture:SKTexture;
     
-    private let backImageName:String="back_blue_v";
+    let backImageName:String="back_blue_v";
     
     var card:Card;
         
-    var positionInStack:CGPoint = CGPointMake(0, 0)
+    var positionInStack:CGPoint = CGPoint(x: 0, y: 0)
     
     var delegate:CardNodeDelegate?
         
@@ -40,9 +42,9 @@ class CardNode : SKSpriteNode {
         self.card = card;
         self.frontTexture=SKTexture(imageNamed: imageNamed)
         self.backTexture = SKTexture(imageNamed: backImageName)
-        super.init(texture:frontTexture,color:UIColor(),size:CGSizeMake(width,height))
+        super.init(texture:frontTexture,color:UIColor(),size:CGSize(width: width,height: height))
         
-        userInteractionEnabled=true
+        isUserInteractionEnabled=true
     }
     
     
@@ -54,43 +56,45 @@ class CardNode : SKSpriteNode {
         self.texture = backTexture;
     }
     
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         for obj in touches{
             let touch = obj 
-            let location  = touch.locationInNode(self.parent!)
-            let touchedNode = nodeAtPoint(location);
+            let location  = touch.location(in: self.parent!)
+            let touchedNode = atPoint(location);
             touchedNode.position=location
             touchedNode.zPosition=Constants.maxZIndex
+            delegate?.cardMoving(self)
         }
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         let touch = touches.first as UITouch!;
-        let location  = touch.locationInNode(self)
-        let touchedNode = nodeAtPoint(location)
+        let location  = touch?.location(in: self)
+        let touchedNode = atPoint(location!)
         
-        let liftUp = SKAction.scaleTo(1.2, duration: 0.2)
-        touchedNode.runAction(liftUp,withKey:"pickup");
+        let liftUp = SKAction.scale(to: 1.2, duration: 0.2)
+        touchedNode.run(liftUp,withKey:"pickup");
+        delegate?.cardMoving(self)
         
         
     }
     
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         let touch = touches.first as UITouch!;
-        let location  = touch.locationInNode(self)
-        let touchedNode = nodeAtPoint(location)
-        if(touch.tapCount>1){
-            touchedNode.userInteractionEnabled = false
+        let location  = touch?.location(in: self)
+        let touchedNode = atPoint(location!)
+        if((touch?.tapCount)!>1){
+            touchedNode.isUserInteractionEnabled = false
             delegate?.cardNodeDidDoubleTapped(self)
         } else {
             delegate?.cardDidDropped(self)
         }
-        let liftUp = SKAction.scaleTo(1.0, duration: 0.2)
-        touchedNode.runAction(liftUp,withKey:"pickup");
+        let liftUp = SKAction.scale(to: 1.0, duration: 0.2)
+        touchedNode.run(liftUp,withKey:"pickup");
         
     }
     

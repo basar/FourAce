@@ -12,14 +12,14 @@ import UIKit
 class AlertView : NSObject, UIAlertViewDelegate {
     
     
-    private var okCallback:(()->(Void))?
+    fileprivate var okCallback:(()->(Void))?
     
-    private var cancelCallback:(()->Void)?
+    fileprivate var cancelCallback:(()->Void)?
     
     var title:String;
     var message:String;
     
-    private var viewController:UIViewController;
+    fileprivate var viewController:UIViewController;
    
     
     init(title:String,message:String,viewController:UIViewController){
@@ -32,25 +32,25 @@ class AlertView : NSObject, UIAlertViewDelegate {
     }
     
     
-    func show(okCallback:(()->Void)?,cancelCallback:(()->Void)?) {
+    func show(_ okCallback:(()->Void)?,cancelCallback:(()->Void)?) {
     
         self.okCallback = okCallback;
         self.cancelCallback = cancelCallback;
         
         if #available(iOS 8.0, *){
             
-            let alert: UIAlertController = UIAlertController(title: self.title, message: self.message, preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "Ok".localized, style: .Default, handler: { action in
+            let alert: UIAlertController = UIAlertController(title: self.title, message: self.message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok".localized, style: .default, handler: { action in
                 self.okCallback?()
             }))
             
             if self.cancelCallback != nil {
-                alert.addAction(UIAlertAction(title: "Cancel".localized, style: .Default, handler: {action in
+                alert.addAction(UIAlertAction(title: "Cancel".localized, style: .default, handler: {action in
                     self.cancelCallback?()
                 }))
             }
             
-            viewController.presentViewController(alert, animated: true, completion: nil)
+            viewController.present(alert, animated: true, completion: nil)
             
         } else { // iOS 7
             
@@ -59,9 +59,9 @@ class AlertView : NSObject, UIAlertViewDelegate {
             
             alert.title = self.title
             alert.message = self.message
-            alert.addButtonWithTitle("Ok".localized)
+            alert.addButton(withTitle: "Ok".localized)
             if self.cancelCallback != nil {
-                alert.addButtonWithTitle("Cancel".localized);
+                alert.addButton(withTitle: "Cancel".localized);
             }
             
             alert.show()
@@ -71,7 +71,7 @@ class AlertView : NSObject, UIAlertViewDelegate {
     
     
     
-    func show(okCallback:(()->Void)){
+    func show(_ okCallback:@escaping (()->Void)){
         self.show(okCallback,cancelCallback:nil);
     }
     
@@ -80,7 +80,7 @@ class AlertView : NSObject, UIAlertViewDelegate {
     }
     
     
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+    func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
         
         if(buttonIndex==0){
             self.okCallback?();

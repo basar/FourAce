@@ -15,16 +15,16 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
 
     
 
-    private var bannerView:ADBannerView?;
+    fileprivate var bannerView:ADBannerView?;
     
         
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        let screenSize:CGSize = UIScreen.mainScreen().bounds.size;
+        let screenSize:CGSize = UIScreen.main.bounds.size;
         let scene = GameScene(size: screenSize,viewController:self);
-        scene.scaleMode = .Fill
+        scene.scaleMode = .fill
         
         let skView = view as! SKView
         
@@ -33,10 +33,10 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
         skView.ignoresSiblingOrder = true
         skView.presentScene(scene)
         
-        bannerView = ADBannerView(frame: CGRectZero)
-        bannerView!.autoresizingMask = UIViewAutoresizing.FlexibleWidth;
+        bannerView = ADBannerView(frame: CGRect.zero)
+        bannerView!.autoresizingMask = UIViewAutoresizing.flexibleWidth;
         bannerView!.delegate = self;
-        bannerView!.frame = CGRectMake(0,self.view.frame.height - bannerView!.frame.size.height,self.view.frame.size.width,bannerView!.frame.size.width);
+        bannerView!.frame = CGRect(x: 0,y: self.view.frame.height - bannerView!.frame.size.height,width: self.view.frame.size.width,height: bannerView!.frame.size.width);
         
         self.view.addSubview(bannerView!);
 
@@ -49,27 +49,27 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
     }
     **/
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent;
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent;
     }
 
 
     override func viewWillLayoutSubviews() {
     }
     
-    func bannerViewDidLoadAd(banner: ADBannerView!) {
-        bannerView!.hidden = false;
+    func bannerViewDidLoadAd(_ banner: ADBannerView!) {
+        bannerView!.isHidden = false;
     }
     
-    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
-        bannerView!.hidden = true;
+    func bannerView(_ banner: ADBannerView!, didFailToReceiveAdWithError error: Error!) {
+        bannerView!.isHidden = true;
     }
     
-    func bannerViewActionShouldBegin(banner: ADBannerView!, willLeaveApplication willLeave: Bool) -> Bool {
+    func bannerViewActionShouldBegin(_ banner: ADBannerView!, willLeaveApplication willLeave: Bool) -> Bool {
         return true;
     }
     
-    func bannerViewActionDidFinish(banner: ADBannerView!) {
+    func bannerViewActionDidFinish(_ banner: ADBannerView!) {
         
     }
 

@@ -20,7 +20,7 @@ class CardStack:CustomStringConvertible {
         self.index = index;
     }
     
-    func push(card:Card) {
+    func push(_ card:Card) {
         card.stackIndex = index
         cards.append(card)
     }
@@ -29,9 +29,8 @@ class CardStack:CustomStringConvertible {
         get {
             var desc = String()
             
-            for var i=size()-1;i>=0;i -= 1 {
-                let card = cards[i]
-                desc = desc + card.description
+            for i in (0..<cards.count).reversed() {
+                desc = desc + cards[i].description
                 if i != 0 {
                     desc = desc + "\n"
                 }

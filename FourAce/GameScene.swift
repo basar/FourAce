@@ -13,23 +13,27 @@ import SpriteKit
 class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDelegate {
     
     
-    private var viewController:UIViewController;
-    private var restartAlertView:AlertView;
-    private var gameOverAlertView:AlertView;
-    private var infoAlertView:AlertView;
+    var viewController:UIViewController;
+    var restartAlertView:AlertView;
+    var gameOverAlertView:AlertView;
+    var infoAlertView:AlertView;
     
-    private let deckButton:ButtonNode;
-    private let restartButton:ButtonNode;
-    private let infoButton:ButtonNode;
-
+    let deckButton:ButtonNode;
+    let restartButton:ButtonNode;
+    let infoButton:ButtonNode;
     
-    private let backgroundNode: SKSpriteNode;
-    private let constantScoreLabel:SKLabelNode;
     
-    private var stackRects:[CGRect]=[CGRect]();
-    private var trashRect:CGRect = CGRectMake(Constants.trashPosition.x, Constants.trashPosition.y, Constants.trashWidth, Constants.trashHeight);
+    let backgroundNode: SKSpriteNode;
+    let constantScoreLabel:SKLabelNode;
     
-    private var cardZpositionInTrash:CGFloat = 5;
+    var stackRects:[CGRect]=[CGRect]();
+    var trashRect:CGRect = CGRect(x: Constants.trashPosition.x, y: Constants.trashPosition.y, width: Constants.trashWidth, height: Constants.trashHeight);
+    
+    var cardZpositionInTrash:CGFloat = 5;
+    var lastCardNodeInTrash: SKSpriteNode? = nil;
+    
+    let trashHighlightName = "trash_highlight";
+    let stackHighlightName = "stack_highlight";
     
     
     init(size:CGSize,viewController:UIViewController) {
@@ -41,19 +45,19 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
         deckButton = ButtonNode(imageNamed: "red_deck", width: Constants.deckWidth, height: Constants.cardHeight)
         
         constantScoreLabel = SKLabelNode();
-    
+        
         
         self.viewController = viewController;
         
         self.restartAlertView = AlertView(title:"Warning".localized,message:"Restart game?".localized,viewController:self.viewController);
         self.gameOverAlertView = AlertView(title:"Game Over!".localized,message:"".localized,viewController:self.viewController);
         self.infoAlertView = AlertView(title:"how_to_play".localized,message:"how_to_play_instructions".localized,viewController:self.viewController);
-
-
+        
+        
         super.init(size: size)
         
         for i:Int in 0 ..< 4 {
-            stackRects.insert(CGRectMake(Constants.stacksXPositions[i], Constants.stacksY, Constants.cardWidth, Constants.cardHeight), atIndex: i)
+            stackRects.insert(CGRect(x: Constants.stacksXPositions[i], y: Constants.stacksY, width: Constants.cardWidth, height: Constants.cardHeight), at: i)
         }
         
     }
@@ -63,17 +67,17 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         
-        backgroundNode.position=CGPointMake(self.size.width/2, self.size.height/2);
+        backgroundNode.position=CGPoint(x: self.size.width/2, y: self.size.height/2);
         backgroundNode.zPosition = -1;
         addChild(backgroundNode)
-    
+        
         constantScoreLabel.position = Constants.scoreLabelPosition;
         constantScoreLabel.fontName = "Arial";
         constantScoreLabel.fontSize = 14;
-        constantScoreLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.Center;
-        constantScoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left;
+        constantScoreLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.center;
+        constantScoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left;
         constantScoreLabel.alpha = 0.5;
         
         addChild(constantScoreLabel)
@@ -81,14 +85,14 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
         
         let deckNodePlaceHolder = SKSpriteNode(imageNamed: "card_place_holder");
         deckNodePlaceHolder.size = CGSize(width: Constants.deckWidth + Constants.placeHolderMargin,
-            height: Constants.deckHeight + Constants.placeHolderMargin)
+                                          height: Constants.deckHeight + Constants.placeHolderMargin)
         deckNodePlaceHolder.position = Constants.constantDeckPosition;
         deckNodePlaceHolder.zPosition = 0;
         addChild(deckNodePlaceHolder);
         
         let trashNode = SKSpriteNode(imageNamed: "card_place_holder");
         trashNode.size = CGSize(width: Constants.trashWidth + Constants.placeHolderMargin,
-            height: Constants.trashHeight + Constants.placeHolderMargin);
+                                height: Constants.trashHeight + Constants.placeHolderMargin);
         trashNode.zPosition = 0;
         trashNode.position = Constants.trashPosition;
         addChild(trashNode)
@@ -111,9 +115,9 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
         
         for i:Int in 0 ..< 4 {
             let placeHolder = SKSpriteNode(imageNamed: "card_place_holder");
-            placeHolder.position = CGPointMake(Constants.stacksXPositions[i], Constants.stacksY)
+            placeHolder.position = CGPoint(x: Constants.stacksXPositions[i], y: Constants.stacksY)
             placeHolder.size = CGSize(width:Constants.cardWidth + Constants.placeHolderMargin,
-                height:Constants.cardHeight + Constants.placeHolderMargin);
+                                      height:Constants.cardHeight + Constants.placeHolderMargin);
             self.addChild(placeHolder)
         }
         
@@ -125,80 +129,80 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
     
     
     
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: TimeInterval) {
         /* Called before each frame is rendered */
         self.constantScoreLabel.text = "Score".localized+" \(FourAceGame.instance.gameScore) (%)"
     }
     
     
-    func cardsWillDealToStacks(cards: [Card], cardStacks: [CardStack]) {
+    func cardsWillDealToStacks(_ cards: [Card], cardStacks: [CardStack]) {
         
         for stack in cardStacks {
             if(stack.size()>0){
                 let cardTop = stack.peek()
                 let cardTopNode:CardNode? = getCardNode(cardTop!)
-                cardTopNode?.userInteractionEnabled = false
+                cardTopNode?.isUserInteractionEnabled = false
             }
         }
         
     }
     
     
-    func cardsDidDealToStacks(cards: [Card],cardStacks:[CardStack]) {
+    func cardsDidDealToStacks(_ cards: [Card],cardStacks:[CardStack]) {
         
         
         for card in cards {
             
             let cardNode:CardNode = CardNode(imageNamed: "\(card.suit)_\(card.value)",card: card,
-                width:Constants.cardWidth,height:Constants.cardHeight);
+                                             width:Constants.cardWidth,height:Constants.cardHeight);
             
             cardNode.delegate = self
             cardNode.position = Constants.constantDeckPosition
             cardNode.zPosition = Constants.maxZIndex
-            cardNode.userInteractionEnabled = false
+            cardNode.isUserInteractionEnabled = false
             addChild(cardNode)
             
             //except last one
             let cardSizeInStack:CGFloat = CGFloat(cardStacks[card.stackIndex].size()-1);
             let cardYPosition:CGFloat = Constants.stacksY - cardSizeInStack * Constants.cardHeight / 3;
-            let destinationPosition:CGPoint = CGPointMake(Constants.stacksXPositions[card.stackIndex],cardYPosition)
+            let destinationPosition:CGPoint = CGPoint(x: Constants.stacksXPositions[card.stackIndex],y: cardYPosition)
             
-            let actionMove = SKAction.moveTo(destinationPosition,duration:0.70);
+            let actionMove = SKAction.move(to: destinationPosition,duration:0.70);
             
-            cardNode.runAction(actionMove, completion: { () -> Void in
+            cardNode.run(actionMove, completion: { () -> Void in
                 
-                cardNode.userInteractionEnabled = true
+                cardNode.isUserInteractionEnabled = true
                 cardNode.zPosition = cardSizeInStack+Constants.cardStartZIndex
                 cardNode.positionInStack = destinationPosition;
                 
-                self.deckButton.userInteractionEnabled = true;
+                self.deckButton.isUserInteractionEnabled = true;
             })
         }
         
     }
     
     
-    func cardDidMoveFromStackToOtherStack(card: Card, fromCardStack: CardStack, toCardStack: CardStack) {
+    func cardDidMoveFromStackToOtherStack(_ card: Card, fromCardStack: CardStack, toCardStack: CardStack) {
         
         if(fromCardStack.size()>0){
             let cardTop = fromCardStack.peek();
             let cardTopNode:CardNode? = getCardNode(cardTop!)
-            cardTopNode?.userInteractionEnabled = true
+            cardTopNode?.isUserInteractionEnabled = true
         }
         
     }
     
     
-    func cardWillPopToStack(card: Card, cardStack: CardStack) {
+    func cardWillPopToStack(_ card: Card, cardStack: CardStack) {
         
     }
     
-    func cardDidPopToStack(card: Card, cardStack: CardStack) {
+    func cardDidPopToStack(_ card: Card, cardStack: CardStack) {
         
         
         if let unlockedCard = cardStack.peek() {
             let unlockedCardNode = getCardNode(unlockedCard)
-            unlockedCardNode?.userInteractionEnabled = true
+            unlockedCardNode?.isUserInteractionEnabled = true
         }
         
     }
@@ -211,13 +215,13 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
     
     func deckDidEmpty() {
         
-        deckButton.userInteractionEnabled = false;
+        deckButton.isUserInteractionEnabled = false;
         deckButton.alpha = 0;
         
     }
     
     func gameDidOver() {
-    
+        
         // Delay 1 seconds
         performAfterDelay(afterDelay: 1, block: {
             self.gameOverAlertView.message = String(format:"game_over_message".localized,"\(FourAceGame.instance.gameScore)");
@@ -225,13 +229,87 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
                 self.resetGame()
             },cancelCallback:{});
         })
-      
-
+        
+        
         
     }
     
-    func cardNodeDidDoubleTapped(cardNode: CardNode) {
+    
+    func showTrashHiglight() {
         
+ 
+        if(self.childNode(withName: trashHighlightName) == nil){
+            
+            let highlightFrameNode = SKSpriteNode(imageNamed: "highlight_frame");
+            highlightFrameNode.size = CGSize(width: Constants.trashWidth + Constants.placeHolderMargin + 10,
+                                             height: Constants.trashHeight + Constants.placeHolderMargin + 10)
+            highlightFrameNode.zPosition = 0;
+            highlightFrameNode.position = Constants.trashPosition;
+            highlightFrameNode.name = trashHighlightName
+            highlightFrameNode.alpha = 0;
+            addChild(highlightFrameNode);
+            
+            let groupAction = SKAction.repeatForever(SKAction.sequence([SKAction.fadeIn(withDuration: 0.5),SKAction.fadeOut(withDuration: 0.5),SKAction.wait(forDuration: 0.25)]));
+            highlightFrameNode.run(groupAction)
+        }
+        
+    }
+    
+    func hideTrashHighlight() {
+          self.childNode(withName: trashHighlightName)?.removeFromParent()
+    }
+    
+    
+    func showStackHighlight(_ index:Int) {
+        
+        if(self.childNode(withName: stackHighlightName + "_\(index)") == nil){
+            
+            let highlightFrameNode = SKSpriteNode(imageNamed: "highlight_frame");
+            highlightFrameNode.position = CGPoint(x: Constants.stacksXPositions[index], y: Constants.stacksY)
+            highlightFrameNode.size = CGSize(width:Constants.cardWidth + Constants.placeHolderMargin + 10,
+                                             height:Constants.cardHeight + Constants.placeHolderMargin + 10);
+            highlightFrameNode.zPosition = 0;
+            highlightFrameNode.name = stackHighlightName + "_\(index)";
+            highlightFrameNode.alpha = 0;
+            addChild(highlightFrameNode);
+            
+            let groupAction = SKAction.repeatForever(SKAction.sequence([SKAction.fadeIn(withDuration: 0.5),SKAction.fadeOut(withDuration: 0.5),SKAction.wait(forDuration: 0.25)]));
+            highlightFrameNode.run(groupAction)
+        }
+    }
+    
+    func hideStackHightLight() {
+        
+        for i:Int in 0 ..< stackRects.count {
+            self.childNode(withName: stackHighlightName + "_\(i)")?.removeFromParent()
+        }
+        
+    }
+
+    
+    func cardMoving(_ cardNode: CardNode) {
+        
+        let removable=FourAceGame.instance.isCardRemovableFromStack(stackIndex: cardNode.card.stackIndex)
+        if removable {
+            showTrashHiglight()
+            return
+        }
+        
+        
+        for i:Int in 0 ..< stackRects.count {
+            if i == cardNode.card.stackIndex{
+                continue
+            }
+            let movable = FourAceGame.instance.isCardMovableFromStackToOtherStack(stackIndex: cardNode.card.stackIndex, otherStackIndex: i)
+            if movable {
+                showStackHighlight(i)
+            }
+        }
+    }
+    
+    func cardNodeDidDoubleTapped(_ cardNode: CardNode) {
+
+    
         let selectedCard=cardNode.card;
         let result = FourAceGame.instance.isCardRemovableFromStack(stackIndex: selectedCard.stackIndex)
         
@@ -240,23 +318,27 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
             FourAceGame.instance.removeCardFromStack(stackIndex: selectedCard.stackIndex)
             
             cardNode.zPosition = Constants.maxZIndex;
-            let moveTo = SKAction.moveTo(Constants.trashPosition, duration: 0.4);
+            let moveTo = SKAction.move(to: Constants.trashPosition, duration: 0.4);
             //let fadeOut=SKAction.fadeOutWithDuration(0.5);
             let sequenceAction = SKAction.sequence([moveTo]);
-            cardNode.runAction(sequenceAction,completion: {()-> Void in
-                //cardNode.removeFromParent()
-                cardNode.zPosition = self.cardZpositionInTrash++;
+            cardNode.run(sequenceAction,completion: {()-> Void in
+                
+                self.lastCardNodeInTrash?.removeFromParent();
+                self.lastCardNodeInTrash = cardNode;
+                self.cardZpositionInTrash += 1;
+                cardNode.zPosition = self.cardZpositionInTrash
+                cardNode.alpha = 0.5
             })
             
         } else {
             
-            cardNode.userInteractionEnabled = true
+            cardNode.isUserInteractionEnabled = true
             
-            let moveTo = SKAction.moveTo(cardNode.positionInStack, duration:0.2)
-            let dropDown = SKAction.scaleTo(1.0, duration: 0.2)
+            let moveTo = SKAction.move(to: cardNode.positionInStack, duration:0.2)
+            let dropDown = SKAction.scale(to: 1.0, duration: 0.2)
             let groupAction = SKAction.group([dropDown,moveTo])
             
-            cardNode.runAction(groupAction,completion:{ () -> Void in
+            cardNode.run(groupAction,completion:{ () -> Void in
                 if(cardNode.card.stackIndex != -1){
                     let cardSizeInStack:CGFloat=CGFloat(FourAceGame.instance.getStackSize(cardNode.card.stackIndex)-1);
                     cardNode.zPosition=Constants.cardStartZIndex + cardSizeInStack;
@@ -264,43 +346,49 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
             })
         }
         
+        hideTrashHighlight()
+        hideStackHightLight()
     }
     
     /*
-    *
-    * Called when a card dropped
-    *
-    */
-    func cardDidDropped(cardNode: CardNode) {
-        
+     *
+     * Called when a card dropped
+     *
+     */
+    func cardDidDropped(_ cardNode: CardNode) {
+    
         var removable:Bool = false;
         
         if(isCardNodeIntersectWithRect(cardNode, rect: trashRect)){
             
             removable=FourAceGame.instance.isCardRemovableFromStack(stackIndex: cardNode.card.stackIndex)
-           
+            
             if removable {
                 
-                cardNode.userInteractionEnabled = false;
+                cardNode.isUserInteractionEnabled = false;
                 FourAceGame.instance.removeCardFromStack(stackIndex: cardNode.card.stackIndex)
-            
-                let moveTo = SKAction.moveTo(Constants.trashPosition,duration:0.2);
-                let dropDown = SKAction.scaleTo(1.0, duration: 0.2)
+                
+                let moveTo = SKAction.move(to: Constants.trashPosition,duration:0.2);
+                let dropDown = SKAction.scale(to: 1.0, duration: 0.2)
                 //let fadeOut=SKAction.fadeOutWithDuration(1)
                 let groupAction=SKAction.group([moveTo,dropDown]);
                 
-                cardNode.runAction(groupAction,completion: {()-> Void in
-                    //cardNode.removeFromParent()
-                    cardNode.zPosition = self.cardZpositionInTrash++;
+                cardNode.run(groupAction,completion: {()-> Void in
+                    
+                    self.lastCardNodeInTrash?.removeFromParent();
+                    self.lastCardNodeInTrash = cardNode;
+                    self.cardZpositionInTrash += 1
+                    cardNode.zPosition = self.cardZpositionInTrash
+                    cardNode.alpha = 0.5;
                 })
                 
             } else {
                 
-                let moveTo = SKAction.moveTo(cardNode.positionInStack, duration:0.2)
-                let dropDown = SKAction.scaleTo(1.0, duration: 0.2)
+                let moveTo = SKAction.move(to: cardNode.positionInStack, duration:0.2)
+                let dropDown = SKAction.scale(to: 1.0, duration: 0.2)
                 let groupAction = SKAction.group([dropDown,moveTo])
                 
-                cardNode.runAction(groupAction,completion:{ () -> Void in
+                cardNode.run(groupAction,completion:{ () -> Void in
                     if(cardNode.card.stackIndex != -1){
                         let cardSizeInStack:CGFloat=CGFloat(FourAceGame.instance.getStackSize(cardNode.card.stackIndex)-1);
                         cardNode.zPosition=Constants.cardStartZIndex + cardSizeInStack;
@@ -320,7 +408,7 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
                         movable=FourAceGame.instance.isCardMovableFromStackToOtherStack(stackIndex: stackIndex, otherStackIndex: i);
                         if(movable){
                             FourAceGame.instance.moveCardFromStackToOtherStack(stackIndex: stackIndex, otherStackIndex: i)
-                            cardNode.positionInStack=CGPointMake(Constants.stacksXPositions[i],Constants.stacksY)
+                            cardNode.positionInStack=CGPoint(x: Constants.stacksXPositions[i],y: Constants.stacksY)
                             //card size in stack except last one
                             let cardSizeInStack:CGFloat=CGFloat(FourAceGame.instance.getStackSize(i)-1);
                             cardNode.zPosition=Constants.cardStartZIndex + cardSizeInStack;
@@ -329,11 +417,11 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
                     break
                 }
             }
-            let moveTo = SKAction.moveTo(cardNode.positionInStack, duration:0.2)
-            let dropDown = SKAction.scaleTo(1.0, duration: 0.2)
+            let moveTo = SKAction.move(to: cardNode.positionInStack, duration:0.2)
+            let dropDown = SKAction.scale(to: 1.0, duration: 0.2)
             let groupAction = SKAction.group([dropDown,moveTo])
             
-            cardNode.runAction(groupAction,completion:{ () -> Void in
+            cardNode.run(groupAction,completion:{ () -> Void in
                 if(!movable){
                     if(cardNode.card.stackIndex != -1){
                         let cardSizeInStack:CGFloat=CGFloat(FourAceGame.instance.getStackSize(cardNode.card.stackIndex)-1);
@@ -344,23 +432,34 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
             
         }
         
+        hideTrashHighlight()
+        hideStackHightLight()
     }
     
     
-
-    func buttonNodeDidTapped(buttonNode: ButtonNode) {
+    func showHighlightFrames() {
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    func buttonNodeDidTapped(_ buttonNode: ButtonNode) {
         
         if(buttonNode===deckButton){
             FourAceGame.instance.dealCardsToStacks()
-            deckButton.userInteractionEnabled = false
+            deckButton.isUserInteractionEnabled = false
         }
         
         if(buttonNode==restartButton){
             
             self.restartAlertView.show({
                 self.resetGame();
-                },
-                cancelCallback:{});
+            },
+                                       cancelCallback:{});
             
         }
         
@@ -371,7 +470,7 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
     }
     
     
-    private func getCardNode(card:Card)->CardNode? {
+    fileprivate func getCardNode(_ card:Card)->CardNode? {
         
         let onlyCardNodes = self.children.filter{$0 is CardNode} as! Array<CardNode>;
         var resultCardNode:CardNode?;
@@ -387,7 +486,7 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
     }
     
     
-    private func resetGame() {
+    fileprivate func resetGame() {
         
         let cardNodes = self.children.filter{$0 is CardNode} as! Array<CardNode>;
         
@@ -404,10 +503,10 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
     
     
     
-    private func isCardNodeIntersectWithRect(cardNode:CardNode,rect:CGRect)->Bool {
+    fileprivate func isCardNodeIntersectWithRect(_ cardNode:CardNode,rect:CGRect)->Bool {
         
         var result = false;
-        let centerPosition = CGPointMake(cardNode.position.x + Constants.cardWidth/2,cardNode.position.y + Constants.cardHeight/2);
+        let centerPosition = CGPoint(x: cardNode.position.x + Constants.cardWidth/2,y: cardNode.position.y + Constants.cardHeight/2);
         result = rect.contains(centerPosition)
         return result;
         

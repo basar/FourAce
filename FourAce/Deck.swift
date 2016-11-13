@@ -16,7 +16,7 @@ protocol DeckProtocol {
     
     func dealCard()->Card?
     
-    func dealCards(count:Int)->[Card]?
+    func dealCards(_ count:Int)->[Card]?
     
     func cardsLeft()->Int
     
@@ -60,10 +60,10 @@ class Deck:DeckProtocol,CustomStringConvertible {
         if(cards.isEmpty){
             return nil
         }
-        return cards.removeAtIndex(0)
+        return cards.remove(at: 0)
     }
     
-    func dealCards(count: Int) -> [Card]? {
+    func dealCards(_ count: Int) -> [Card]? {
         
         if(count>cards.count){
             return nil

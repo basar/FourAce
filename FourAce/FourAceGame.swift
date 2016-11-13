@@ -7,6 +7,30 @@
 //
 
 import Foundation
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 
 
@@ -14,15 +38,15 @@ import Foundation
 
 protocol FourAceGameDelegate {
     
-    func cardsWillDealToStacks(cards:[Card],cardStacks:[CardStack])
+    func cardsWillDealToStacks(_ cards:[Card],cardStacks:[CardStack])
     
-    func cardsDidDealToStacks(cards:[Card],cardStacks:[CardStack])
+    func cardsDidDealToStacks(_ cards:[Card],cardStacks:[CardStack])
     
-    func cardWillPopToStack(card:Card,cardStack:CardStack)
+    func cardWillPopToStack(_ card:Card,cardStack:CardStack)
     
-    func cardDidPopToStack(card:Card,cardStack:CardStack)
+    func cardDidPopToStack(_ card:Card,cardStack:CardStack)
     
-    func cardDidMoveFromStackToOtherStack(card:Card,fromCardStack:CardStack,toCardStack:CardStack)
+    func cardDidMoveFromStackToOtherStack(_ card:Card,fromCardStack:CardStack,toCardStack:CardStack)
     
     func gameScoreDidChange()
     
@@ -36,13 +60,13 @@ class FourAceGame:CustomStringConvertible {
     
     static let instance = FourAceGame()
     
-    private var deck:Deck = Deck()
+    fileprivate var deck:Deck = Deck()
     
-    private var stacks:[CardStack] = [CardStack(index:0),CardStack(index:1),CardStack(index:2),CardStack(index:3)]
+    fileprivate var stacks:[CardStack] = [CardStack(index:0),CardStack(index:1),CardStack(index:2),CardStack(index:3)]
     
     var delegate:FourAceGameDelegate?
     
-    private init(){
+    fileprivate init(){
         
     }
 
@@ -66,7 +90,7 @@ class FourAceGame:CustomStringConvertible {
         
         var dealedCards:[Card] = [Card]()
         for i:Int in 0 ..< 4 {
-            dealedCards.insert(deck.dealCard()!, atIndex:i)
+            dealedCards.insert(deck.dealCard()!, at:i)
         }
         
         delegate?.cardsWillDealToStacks(dealedCards, cardStacks: stacks)
@@ -112,7 +136,7 @@ class FourAceGame:CustomStringConvertible {
             moved = fromStack.pop()
             toStack.push(moved!)
             delegate?.cardDidMoveFromStackToOtherStack(moved!, fromCardStack: fromStack, toCardStack: toStack)
-            if(moved?.value == .Ace){
+            if(moved?.value == .ace){
                 delegate?.gameScoreDidChange()
             }
             controlWhetherGameOver()
@@ -171,7 +195,7 @@ class FourAceGame:CustomStringConvertible {
     }
     
     
-    func getStackSize(stackIndex:Int) -> Int {
+    func getStackSize(_ stackIndex:Int) -> Int {
         return stacks[stackIndex].size();
     }
     
@@ -196,7 +220,7 @@ class FourAceGame:CustomStringConvertible {
         return result;
     }
     
-    private func controlWhetherGameOver() {
+    fileprivate func controlWhetherGameOver() {
         
         if(deck.currentCount==0){
             let result = isAnyMoveExist()
@@ -234,7 +258,7 @@ class FourAceGame:CustomStringConvertible {
                 var cards:[Card] = stack.cards;
                 for i:Int in 0 ..< cards.count {
                     let card:Card=cards[i];
-                    if(card.value == .Ace && i==0){
+                    if(card.value == .ace && i==0){
                         score=score+25;
                         continue
                     }

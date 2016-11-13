@@ -13,14 +13,14 @@ import SpriteKit
 /* Global Functions */
 
 
-func log(logMessage:String,functionName:String = #function){
+func log(_ logMessage:String,functionName:String = #function){
     print("\(functionName): \(logMessage)");
 }
 
 
 
-func performAfterDelay(afterDelay delay:NSTimeInterval, block:() -> Void){
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), block)
+func performAfterDelay(afterDelay delay:TimeInterval, block:@escaping () -> Void){
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: block)
 }
 
 
@@ -33,7 +33,7 @@ extension Array {
     mutating func shuffle(){
         
         for _ in 0 ..< count {
-            sortInPlace { (_,_) in arc4random() < arc4random() }
+            sort { (_,_) in arc4random() < arc4random() }
         }
         
     }
@@ -44,13 +44,13 @@ extension String {
     
     var localized:String {
         get{
-            return NSLocalizedString(self, tableName: nil, bundle: NSBundle.mainBundle(), value: "", comment: "");
+            return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "");
         }
     }
     
     
-    func localizedWithComment(comment:String)->String {
-        return NSLocalizedString(self, tableName: nil, bundle: NSBundle.mainBundle(), value: "", comment: comment);
+    func localizedWithComment(_ comment:String)->String {
+        return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: comment);
     }
 }
 
@@ -62,7 +62,7 @@ class Util {
         
         var result:Bool = false;
         
-        if UIScreen.mainScreen().bounds.height < 568.0 {
+        if UIScreen.main.bounds.height < 568.0 {
             result = true;
         }
         
