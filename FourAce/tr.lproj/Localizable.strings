@@ -10,7 +10,8 @@
 "Ok" = "Tamam";
 "Cancel" = "İptal";
 "Game Over!" = "Oyun Bitti!";
-"game_over_message" = "Dileğinin gerçekleşme olasılığı: %@%%. Tekrar dene?";
+"game_over_message" = "Dileğinin gerçekleşme olasılığı: %@%% , tekrar dene?";
 "Score" = "Skor";
 "how_to_play" = "Nasıl oynanır?";
 "how_to_play_instructions" = "Aynı seri kartlardan büyük olan küçük olanı götürür. En yüksek skora ulaşmak için dört ası en üstde yan yana getirmeye çalış";
+"make_a_wish" = "Bir dilek tut! :)";

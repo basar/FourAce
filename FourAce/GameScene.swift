@@ -9,7 +9,6 @@
 import SpriteKit
 
 
-
 class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDelegate {
     
     
@@ -25,6 +24,7 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
     
     let backgroundNode: SKSpriteNode;
     let constantScoreLabel:SKLabelNode;
+    let timerLabel:SKLabelNode;
     
     var stackRects:[CGRect]=[CGRect]();
     var trashRect:CGRect = CGRect(x: Constants.trashPosition.x, y: Constants.trashPosition.y, width: Constants.trashWidth, height: Constants.trashHeight);
@@ -34,6 +34,9 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
     
     let trashHighlightName = "trash_highlight";
     let stackHighlightName = "stack_highlight";
+    
+    var gameTimer = Timer()
+    var gameTimeCounter = 0;
     
     
     init(size:CGSize,viewController:UIViewController) {
@@ -45,7 +48,7 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
         deckButton = ButtonNode(imageNamed: "red_deck", width: Constants.deckWidth, height: Constants.cardHeight)
         
         constantScoreLabel = SKLabelNode();
-        
+        timerLabel = SKLabelNode();
         
         self.viewController = viewController;
         
@@ -53,13 +56,13 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
         self.gameOverAlertView = AlertView(title:"Game Over!".localized,message:"".localized,viewController:self.viewController);
         self.infoAlertView = AlertView(title:"how_to_play".localized,message:"how_to_play_instructions".localized,viewController:self.viewController);
         
-        
+    
         super.init(size: size)
         
         for i:Int in 0 ..< 4 {
             stackRects.insert(CGRect(x: Constants.stacksXPositions[i], y: Constants.stacksY, width: Constants.cardWidth, height: Constants.cardHeight), at: i)
         }
-        
+    
     }
     
     
@@ -74,7 +77,7 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
         addChild(backgroundNode)
         
         constantScoreLabel.position = Constants.scoreLabelPosition;
-        constantScoreLabel.fontName = "Arial";
+        constantScoreLabel.fontName = "Chalkduster";
         constantScoreLabel.fontSize = 14;
         constantScoreLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.center;
         constantScoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left;
@@ -82,6 +85,14 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
         
         addChild(constantScoreLabel)
         
+        timerLabel.position = Constants.timerLabelPosition;
+        timerLabel.fontName = "Arial";
+        timerLabel.fontSize = 14;
+        timerLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.center;
+        timerLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left;
+        timerLabel.alpha = 0.5;
+        
+        addChild(timerLabel)
         
         let deckNodePlaceHolder = SKSpriteNode(imageNamed: "card_place_holder");
         deckNodePlaceHolder.size = CGSize(width: Constants.deckWidth + Constants.placeHolderMargin,
@@ -124,7 +135,8 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
         //Start game
         FourAceGame.instance.delegate = self;
         FourAceGame.instance.startGame()
-        
+        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+        showMakeWishMessage()
     }
     
     
@@ -132,6 +144,17 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
     override func update(_ currentTime: TimeInterval) {
         /* Called before each frame is rendered */
         self.constantScoreLabel.text = "Score".localized+" \(FourAceGame.instance.gameScore) (%)"
+    }
+    
+    
+    func timerAction(){
+        
+        gameTimeCounter = gameTimeCounter + 1;
+        let minutes = Int(gameTimeCounter)/60 % 60
+        let seconds = Int(gameTimeCounter) % 60
+        let formattedTime = String(format:"%02i:%02i",minutes,seconds)
+        self.timerLabel.text = formattedTime
+        
     }
     
     
@@ -224,6 +247,7 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
         
         // Delay 1 seconds
         performAfterDelay(afterDelay: 1, block: {
+            self.gameTimer.invalidate()
             self.gameOverAlertView.message = String(format:"game_over_message".localized,"\(FourAceGame.instance.gameScore)");
             self.gameOverAlertView.show({
                 self.resetGame()
@@ -287,6 +311,28 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
     }
 
     
+    func showMakeWishMessage() {
+        
+        
+        let wishMessage = SKLabelNode()
+        wishMessage.text = "make_a_wish".localized
+        wishMessage.fontColor = UIColor.white
+        wishMessage.position = CGPoint(x:self.middlePoint.x,y:-100)
+        wishMessage.fontName = "Chalkduster"
+        
+        let moveTo = SKAction.moveTo(y: self.middlePoint.y, duration: 1)
+        let fadeOut=SKAction.fadeOut(withDuration:2.5)
+        let groupAction=SKAction.group([moveTo,fadeOut]);
+        
+        self.addChild(wishMessage)
+        
+        wishMessage.run(groupAction,completion: {()-> Void in
+          wishMessage.removeFromParent()
+        })
+        
+        
+    }
+    
     func cardMoving(_ cardNode: CardNode) {
         
         let removable=FourAceGame.instance.isCardRemovableFromStack(stackIndex: cardNode.card.stackIndex)
@@ -315,7 +361,7 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
         
         if result {
             
-            FourAceGame.instance.removeCardFromStack(stackIndex: selectedCard.stackIndex)
+            let _ = FourAceGame.instance.removeCardFromStack(stackIndex: selectedCard.stackIndex)
             
             cardNode.zPosition = Constants.maxZIndex;
             let moveTo = SKAction.move(to: Constants.trashPosition, duration: 0.4);
@@ -366,7 +412,7 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
             if removable {
                 
                 cardNode.isUserInteractionEnabled = false;
-                FourAceGame.instance.removeCardFromStack(stackIndex: cardNode.card.stackIndex)
+                let _ = FourAceGame.instance.removeCardFromStack(stackIndex: cardNode.card.stackIndex)
                 
                 let moveTo = SKAction.move(to: Constants.trashPosition,duration:0.2);
                 let dropDown = SKAction.scale(to: 1.0, duration: 0.2)
@@ -407,7 +453,7 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
                     if(stackIndex != -1){
                         movable=FourAceGame.instance.isCardMovableFromStackToOtherStack(stackIndex: stackIndex, otherStackIndex: i);
                         if(movable){
-                            FourAceGame.instance.moveCardFromStackToOtherStack(stackIndex: stackIndex, otherStackIndex: i)
+                            let _ = FourAceGame.instance.moveCardFromStackToOtherStack(stackIndex: stackIndex, otherStackIndex: i)
                             cardNode.positionInStack=CGPoint(x: Constants.stacksXPositions[i],y: Constants.stacksY)
                             //card size in stack except last one
                             let cardSizeInStack:CGFloat=CGFloat(FourAceGame.instance.getStackSize(i)-1);
@@ -436,19 +482,12 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
         hideStackHightLight()
     }
     
-    
-    func showHighlightFrames() {
-        
-        
-        
-        
-    }
-    
-    
-    
+  
+
     
     func buttonNodeDidTapped(_ buttonNode: ButtonNode) {
         
+   
         if(buttonNode===deckButton){
             FourAceGame.instance.dealCardsToStacks()
             deckButton.isUserInteractionEnabled = false
@@ -457,9 +496,9 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
         if(buttonNode==restartButton){
             
             self.restartAlertView.show({
-                self.resetGame();
-            },
-                                       cancelCallback:{});
+                self.resetGame()
+            },cancelCallback:{
+            });
             
         }
         
@@ -493,11 +532,17 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
         for cardNode in cardNodes {
             cardNode.removeFromParent();
         }
+    
+        deckButton.alpha = 100;
+        timerLabel.text = String("00:00")
+        gameTimeCounter = 0;
+        gameTimer.invalidate()
+        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
         
         FourAceGame.instance.resetGame();
         FourAceGame.instance.startGame();
         
-        deckButton.alpha = 100;
+        showMakeWishMessage()
         
     }
     

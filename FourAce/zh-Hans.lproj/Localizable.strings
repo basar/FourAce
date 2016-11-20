@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  FortuneTeller
+
+  Created by basar cetinkaya on 13/08/15.
+  Copyright (c) 2015 basar cetinkaya. All rights reserved.
+*/
+"Warning" = "警告";
+"Restart game?" = "重新开始游戏";
+"Ok" = "好";
+"Cancel" = "取消";
+"Game Over!" = "游戏结束!";
+"game_over_message" = "你的愿望的概率是 %@%% , 再试一次?";
+"Score" = "得分了";
+"how_to_play" = "怎么玩?";
+"how_to_play_instructions" = "最大的卡消除了同一套西装的小卡。尝试把四个ace卡并排在顶部达到最高分";
+"make_a_wish" = "许个愿! :)";

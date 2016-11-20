@@ -10,7 +10,8 @@
 "Ok" = "Ok";
 "Cancel" = "Cancel";
 "Game Over!" = "Game Over!";
-"game_over_message" = "The probability of your wish is %@%%. Try again?";
+"game_over_message" = "The probability of your wish is %@%% , try again?";
 "Score" = "Score";
 "how_to_play" = "How to play?";
 "how_to_play_instructions" = "The biggest card eliminates the small card(s) in the same suit. Try to place the four aces cards side by side on the top to reach maximum score";
+"make_a_wish" = "Make a wish! :)";

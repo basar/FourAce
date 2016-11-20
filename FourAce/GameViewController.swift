@@ -22,9 +22,10 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
         
         super.viewDidLoad()
         
-        let screenSize:CGSize = UIScreen.main.bounds.size;
+        let screenSize:CGSize = Util.isIPhone4OrLess() ? UIScreen.main.bounds.size : CGSize(width: 320, height: 568);
+     
         let scene = GameScene(size: screenSize,viewController:self);
-        scene.scaleMode = .fill
+        scene.scaleMode = .aspectFill
         
         let skView = view as! SKView
         

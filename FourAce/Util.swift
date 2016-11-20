@@ -40,6 +40,17 @@ extension Array {
 
 }
 
+extension SKScene {
+    
+    
+    var middlePoint:CGPoint {
+        get{
+            return CGPoint(x:self.size.width/2.0,y:self.size.height/2.0)
+        }
+    }
+    
+}
+
 extension String {
     
     var localized:String {

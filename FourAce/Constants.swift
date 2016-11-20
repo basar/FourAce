@@ -175,6 +175,15 @@ class Constants {
         }
     }
     
+    static var timerLabelPosition:CGPoint {
+        get{
+            if Util.isIPhone4OrLess() {
+                return CGPoint(x: 15, y: 395);
+            }
+            return CGPoint(x: 15, y: 460);
+        }
+    }
+    
     
     static let maxZIndex:CGFloat = 100;
     static let cardStartZIndex:CGFloat = 5;
