@@ -11,28 +11,29 @@ import SpriteKit
 import iAd
 
 
-class GameViewController: UIViewController, ADBannerViewDelegate {
-
-    
+class GameViewController: UIViewController, ADBannerViewDelegate, BWWalkthroughViewControllerDelegate {
 
     fileprivate var bannerView:ADBannerView?;
     
-        
+    var walkthroughController:BWWalkthroughViewController!;
+    
+    var gameScene:GameScene!;
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
         let screenSize:CGSize = Util.isIPhone4OrLess() ? UIScreen.main.bounds.size : CGSize(width: 320, height: 568);
      
-        let scene = GameScene(size: screenSize,viewController:self);
-        scene.scaleMode = .aspectFill
+        self.gameScene = GameScene(size: screenSize,viewController:self);
+        self.gameScene.scaleMode = .aspectFill
         
         let skView = view as! SKView
         
         skView.showsFPS = false
         skView.showsNodeCount = false
         skView.ignoresSiblingOrder = true
-        skView.presentScene(scene)
+        skView.presentScene(self.gameScene)
         
         bannerView = ADBannerView(frame: CGRect.zero)
         bannerView!.autoresizingMask = UIViewAutoresizing.flexibleWidth;
@@ -42,7 +43,28 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
         self.view.addSubview(bannerView!);
 
     }
+    
+    func showWalkthroughScreen () {
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        self.walkthroughController = storyBoard.instantiateViewController(withIdentifier: "wtContainer") as! BWWalkthroughViewController
+        let pageOne = storyBoard.instantiateViewController(withIdentifier: "wtPage1")
+        let pageTwo = storyBoard.instantiateViewController(withIdentifier: "wtPage2")
+        let pageThree = storyBoard.instantiateViewController(withIdentifier: "wtPage3")
 
+        self.walkthroughController.delegate = self
+        self.walkthroughController.add(viewController:pageOne)
+        self.walkthroughController.add(viewController:pageTwo)
+        self.walkthroughController.add(viewController:pageThree)
+        
+        self.present(self.walkthroughController, animated: true) {
+            ()->() in
+            //Do nothing
+        }
+        
+        //let pageViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "pageViewControllerId");
+        //self.viewController.present(pageViewController, animated: true, completion: nil)
+    }
     
     /**
     override func prefersStatusBarHidden() -> Bool {
@@ -74,8 +96,15 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
         
     }
 
-    
-    
+}
 
 
+extension GameViewController {
+    
+    func walkthroughCloseButtonPressed() {
+        self.dismiss(animated: true, completion: nil)
+        self.gameScene.doUnpauseTimer();
+    }
+    
+    
 }

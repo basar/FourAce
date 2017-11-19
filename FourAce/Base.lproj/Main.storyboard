@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="LVB-YS-i5n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LVB-YS-i5n">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,17 +17,112 @@
                     <view key="view" contentMode="scaleToFill" id="bdc-N1-crn" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="H8q-cN-AqA"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74.666666666666671" y="129.69333333333333"/>
+            <point key="canvasLocation" x="140" y="136.99999999999997"/>
+        </scene>
+        <!--Walkthrough View Controller-->
+        <scene sceneID="MZT-QO-vem">
+            <objects>
+                <viewController storyboardIdentifier="wtContainer" id="Orz-Ys-txZ" customClass="BWWalkthroughViewController" customModule="FourAce" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UIS-u4-lgv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOf-Ha-4fi">
+                                <rect key="frame" x="321" y="28" width="38" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="FqR-Vu-Beu"/>
+                                    <constraint firstAttribute="width" constant="38" id="IVR-eH-Osg"/>
+                                </constraints>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="close:" destination="Orz-Ys-txZ" eventType="touchUpInside" id="wUO-NS-7z3"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Pjl-gr-OaS">
+                                <rect key="frame" x="168" y="610" width="39" height="37"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1097430595" green="0.16902728519999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6t4-yC-JqD" firstAttribute="bottom" secondItem="Pjl-gr-OaS" secondAttribute="bottom" constant="20" id="8ur-2J-gPP"/>
+                            <constraint firstItem="6t4-yC-JqD" firstAttribute="trailing" secondItem="uOf-Ha-4fi" secondAttribute="trailing" constant="16" id="VGb-u4-pAX"/>
+                            <constraint firstItem="Pjl-gr-OaS" firstAttribute="centerX" secondItem="6t4-yC-JqD" secondAttribute="centerX" id="WtM-Lb-htN"/>
+                            <constraint firstItem="uOf-Ha-4fi" firstAttribute="top" secondItem="6t4-yC-JqD" secondAttribute="top" constant="8" id="vfY-Ah-cgF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6t4-yC-JqD"/>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="uOf-Ha-4fi" id="lgk-l6-mhg"/>
+                        <outlet property="pageControl" destination="Pjl-gr-OaS" id="IPB-3m-abT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hPz-uD-vgx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1068.75" y="136.26760563380282"/>
+        </scene>
+        <!--Walkthrough Page View Controller-->
+        <scene sceneID="oi9-V6-RPO">
+            <objects>
+                <viewController storyboardIdentifier="wtPage1" id="OSA-wm-ygm" customClass="BWWalkthroughPageViewController" customModule="FourAce" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JxO-rb-wTn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_background_2" translatesAutoresizingMaskIntoConstraints="NO" id="T7e-pr-w4G">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="T7e-pr-w4G" firstAttribute="leading" secondItem="IbL-45-aD1" secondAttribute="leading" id="97F-f8-GJT"/>
+                            <constraint firstItem="IbL-45-aD1" firstAttribute="trailing" secondItem="T7e-pr-w4G" secondAttribute="trailing" id="PYF-xS-BN7"/>
+                            <constraint firstItem="IbL-45-aD1" firstAttribute="bottom" secondItem="T7e-pr-w4G" secondAttribute="bottom" id="wdb-dW-VDK"/>
+                            <constraint firstItem="T7e-pr-w4G" firstAttribute="top" secondItem="IbL-45-aD1" secondAttribute="top" constant="-20" id="zz7-Qf-yKw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IbL-45-aD1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="90v-U2-Szf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="273.75" y="1080.6338028169014"/>
+        </scene>
+        <!--Walkthrough Page View Controller-->
+        <scene sceneID="yfr-8k-wbD">
+            <objects>
+                <viewController storyboardIdentifier="wtPage2" id="Rvu-JO-xwW" customClass="BWWalkthroughPageViewController" customModule="FourAce" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wmb-RN-aGR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.66823843800000005" blue="0.28906042030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="B8b-EB-3hI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m1i-VX-cVc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1074.375" y="1081.6901408450703"/>
+        </scene>
+        <!--Walkthrough Page View Controller-->
+        <scene sceneID="L4R-75-chh">
+            <objects>
+                <viewController storyboardIdentifier="wtPage3" id="83E-rN-aWh" customClass="BWWalkthroughPageViewController" customModule="FourAce" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2bL-v4-L6p">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="efa-HO-Bpy"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fc0-go-i65" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1865.625" y="1081.6901408450703"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
-    </simulatedMetricsContainer>
+    <resources>
+        <image name="close" width="52" height="48"/>
+        <image name="green_background_2" width="320" height="568"/>
+    </resources>
 </document>

@@ -12,7 +12,7 @@ import SpriteKit
 class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDelegate {
     
     
-    var viewController:UIViewController;
+    var gameViewController:GameViewController;
     var restartAlertView:AlertView;
     var gameOverAlertView:AlertView;
     var infoAlertView:AlertView;
@@ -38,6 +38,8 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
     var gameTimer = Timer()
     var gameTimeCounter = 0;
     
+    var pauseTimer:Bool = false;
+    
     
     init(size:CGSize,viewController:UIViewController) {
         
@@ -50,11 +52,11 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
         constantScoreLabel = SKLabelNode();
         timerLabel = SKLabelNode();
         
-        self.viewController = viewController;
+        self.gameViewController = viewController as! GameViewController;
         
-        self.restartAlertView = AlertView(title:"Warning".localized,message:"Restart game?".localized,viewController:self.viewController);
-        self.gameOverAlertView = AlertView(title:"Game Over!".localized,message:"".localized,viewController:self.viewController);
-        self.infoAlertView = AlertView(title:"how_to_play".localized,message:"how_to_play_instructions".localized,viewController:self.viewController);
+        self.restartAlertView = AlertView(title:"Warning".localized,message:"Restart game?".localized,viewController:self.gameViewController);
+        self.gameOverAlertView = AlertView(title:"Game Over!".localized,message:"".localized,viewController:self.gameViewController);
+        self.infoAlertView = AlertView(title:"how_to_play".localized,message:"how_to_play_instructions".localized,viewController:self.gameViewController);
         
     
         super.init(size: size)
@@ -148,15 +150,24 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
     
     
     func timerAction(){
-        
-        gameTimeCounter = gameTimeCounter + 1;
-        let minutes = Int(gameTimeCounter)/60 % 60
-        let seconds = Int(gameTimeCounter) % 60
-        let formattedTime = String(format:"%02i:%02i",minutes,seconds)
-        self.timerLabel.text = formattedTime
+        if (!pauseTimer) {
+            gameTimeCounter = gameTimeCounter + 1;
+            let minutes = Int(gameTimeCounter)/60 % 60
+            let seconds = Int(gameTimeCounter) % 60
+            let formattedTime = String(format:"%02i:%02i",minutes,seconds)
+            self.timerLabel.text = formattedTime
+        }
         
     }
     
+    
+    func doPauseTimer() {
+        self.pauseTimer = true
+    }
+    
+    func doUnpauseTimer() {
+        self.pauseTimer = false;
+    }
     
     func cardsWillDealToStacks(_ cards: [Card], cardStacks: [CardStack]) {
         
@@ -253,10 +264,8 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
                 self.resetGame()
             },cancelCallback:{});
         })
-        
-        
-        
     }
+    
     
     
     func showTrashHiglight() {
@@ -503,7 +512,9 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
         }
         
         if(buttonNode==infoButton){
-            self.infoAlertView.show({},cancelCallback:nil);
+            //self.infoAlertView.show({},cancelCallback:nil);
+            self.doPauseTimer();
+            self.gameViewController.showWalkthroughScreen();
         }
         
     }
