@@ -28,6 +28,7 @@
 		582E150A1FC0ADDB00E2A72A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E15091FC0ADDB00E2A72A /* PageViewController.swift */; };
 		58B5CB3B1FC1B1460022C8F8 /* BWWalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B5CB391FC1B1460022C8F8 /* BWWalkthroughPageViewController.swift */; };
 		58B5CB3C1FC1B1460022C8F8 /* BWWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B5CB3A1FC1B1460022C8F8 /* BWWalkthroughViewController.swift */; };
+		58B5CB401FC74ABC0022C8F8 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B5CB3F1FC74ABC0022C8F8 /* WalkthroughViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		582E15091FC0ADDB00E2A72A /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		58B5CB391FC1B1460022C8F8 /* BWWalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		58B5CB3A1FC1B1460022C8F8 /* BWWalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughViewController.swift; sourceTree = "<group>"; };
+		58B5CB3F1FC74ABC0022C8F8 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		58FD7FF01DE0982500A4ED0B /* FourAce-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FourAce-Bridging-Header.h"; sourceTree = "<group>"; };
 		58FD7FF11DE0982500A4ED0B /* FourAceTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FourAceTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		58FD800D1DE1A58700A4ED0B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				071E9B5D1B71489200F0A123 /* ButtonNode.swift */,
 				071E9B611B7685F100F0A123 /* AlertView.swift */,
 				582E15091FC0ADDB00E2A72A /* PageViewController.swift */,
+				58B5CB3F1FC74ABC0022C8F8 /* WalkthroughViewController.swift */,
 			);
 			path = FourAce;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				58B5CB3C1FC1B1460022C8F8 /* BWWalkthroughViewController.swift in Sources */,
 				0737B1DC1B5594C600C5B6E9 /* DeckNode.swift in Sources */,
 				076451711B8A38DA0058136D /* Constants.swift in Sources */,
+				58B5CB401FC74ABC0022C8F8 /* WalkthroughViewController.swift in Sources */,
 				0737B1DA1B52867000C5B6E9 /* CardStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
