@@ -136,12 +136,15 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
         
         //Start game
         FourAceGame.instance.delegate = self;
+        startGame();
+       
+    }
+    
+    func startGame() {
         FourAceGame.instance.startGame()
         gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
         showMakeWishMessage()
     }
-    
-    
     
     override func update(_ currentTime: TimeInterval) {
         /* Called before each frame is rendered */

@@ -15,4 +15,7 @@
 "how_to_play" = "Nasıl oynanır?";
 "how_to_play_instructions" = "Aynı seri kartlardan büyük olan küçük olanı götürür. En yüksek skora ulaşmak için dört ası en üstde yan yana getirmeye çalış";
 "make_a_wish" = "Bir dilek tut! :)";
-"walkthrough_description_1" = "Oyunun amacı dört ası en üstte yanyana getirmektir";
+"walkthrough_brief_1" = "Oyunun amacı dört ası en üste getirmektir. Bu asların her biri için 25 puan kazanırsın";
+"walkthrough_brief_2" = "Aynı tip kağıtlardan büyük olan küçük olanı götürür. Örneğin sinek altılıdan, sinek onlu sayesinde kurtulabilirsin!";
+"walkthrough_brief_3" = "Eğer bir kartın üstünde başka bir kart varsa o kart deaktif durumdadır. Örneğin kupa dörtlüden kurtulmak için ilk önce karo yediden kurtulmalısın";
+"start" = "Başla!";

@@ -15,3 +15,7 @@
 "how_to_play" = "怎么玩?";
 "how_to_play_instructions" = "最大的卡消除了同一套西装的小卡。尝试把四个ace卡并排在顶部达到最高分";
 "make_a_wish" = "许个愿! :)";
+"walkthrough_brief_1" = "Oyunun amacı dört ası en üste getirmektir. Bu asların her biri için 25 puan kazanırsın";
+"walkthrough_brief_2" = "Aynı tip kağıtlardan büyük olan küçük olanı götürür. Örneğin sinek altılıdan, sinek onlu sayesinde kurtulabilirsin!";
+"walkthrough_brief_3" = "Eğer bir kartın üstünde başka bir kart varsa o kart deaktif durumdadır. Örneğin kupa dörtlüden kurtulmak için ilk önce karo yediden kurtulmalısın";
+"start" = "Start!";

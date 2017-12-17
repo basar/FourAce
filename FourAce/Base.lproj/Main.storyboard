@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LVB-YS-i5n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LVB-YS-i5n">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -50,7 +50,7 @@
                                 </connections>
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Pjl-gr-OaS">
-                                <rect key="frame" x="140.5" y="511" width="39" height="37"/>
+                                <rect key="frame" x="140.5" y="521" width="39" height="37"/>
                             </pageControl>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rgi-Z1-HD6">
                                 <rect key="frame" x="8" y="342" width="30" height="50"/>
@@ -74,24 +74,38 @@
                                     <action selector="nextPage" destination="Orz-Ys-txZ" eventType="touchUpInside" id="gzM-pX-vW8"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SmZ-6Y-R64">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SmZ-6Y-R64" userLabel="Template">
                                 <rect key="frame" x="0.0" y="70" width="320" height="256"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="SmZ-6Y-R64" secondAttribute="height" multiplier="96:77" id="IeR-XY-Fph"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbS-Bw-kbD">
+                                <rect key="frame" x="188" y="28" width="116" height="30"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <state key="normal" title="Başla!" backgroundImage="btn_background_2">
+                                    <color key="titleColor" red="1" green="0.98943546599999999" blue="0.11255666810000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButtonPressed:" destination="Orz-Ys-txZ" eventType="touchUpInside" id="V46-bR-ZwH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="lKx-ap-QpO" firstAttribute="top" secondItem="SmZ-6Y-R64" secondAttribute="bottom" constant="16" id="2Qx-nP-Zvy"/>
-                            <constraint firstItem="6t4-yC-JqD" firstAttribute="bottom" secondItem="Pjl-gr-OaS" secondAttribute="bottom" constant="20" id="8ur-2J-gPP"/>
+                            <constraint firstItem="TbS-Bw-kbD" firstAttribute="leading" secondItem="uOf-Ha-4fi" secondAttribute="trailing" constant="150" id="6ur-rS-Qpv"/>
+                            <constraint firstItem="6t4-yC-JqD" firstAttribute="bottom" secondItem="Pjl-gr-OaS" secondAttribute="bottom" constant="10" id="8ur-2J-gPP"/>
                             <constraint firstItem="uOf-Ha-4fi" firstAttribute="leading" secondItem="6t4-yC-JqD" secondAttribute="leading" constant="8" id="9Rb-iu-Cvh"/>
                             <constraint firstItem="SmZ-6Y-R64" firstAttribute="leading" secondItem="6t4-yC-JqD" secondAttribute="leading" id="CS7-c6-jG9"/>
+                            <constraint firstItem="TbS-Bw-kbD" firstAttribute="top" secondItem="6t4-yC-JqD" secondAttribute="top" constant="8" id="Kic-19-aa4"/>
                             <constraint firstItem="6t4-yC-JqD" firstAttribute="trailing" secondItem="lKx-ap-QpO" secondAttribute="trailing" constant="8" id="NCe-Yr-77X"/>
                             <constraint firstItem="SmZ-6Y-R64" firstAttribute="top" secondItem="6t4-yC-JqD" secondAttribute="top" constant="50" id="QK1-k7-XvD"/>
                             <constraint firstItem="6t4-yC-JqD" firstAttribute="trailing" secondItem="SmZ-6Y-R64" secondAttribute="trailing" id="Trh-v4-A3k"/>
                             <constraint firstItem="Pjl-gr-OaS" firstAttribute="centerX" secondItem="6t4-yC-JqD" secondAttribute="centerX" id="WtM-Lb-htN"/>
                             <constraint firstItem="Rgi-Z1-HD6" firstAttribute="leading" secondItem="6t4-yC-JqD" secondAttribute="leading" constant="8" id="Zc5-d8-5fH"/>
+                            <constraint firstItem="6t4-yC-JqD" firstAttribute="trailing" secondItem="TbS-Bw-kbD" secondAttribute="trailing" constant="16" id="bq8-u7-pyT"/>
+                            <constraint firstItem="TbS-Bw-kbD" firstAttribute="centerY" secondItem="uOf-Ha-4fi" secondAttribute="centerY" id="khy-8T-z4G"/>
                             <constraint firstItem="uOf-Ha-4fi" firstAttribute="top" secondItem="6t4-yC-JqD" secondAttribute="top" constant="8" id="o22-pR-0gq"/>
                             <constraint firstItem="Rgi-Z1-HD6" firstAttribute="top" secondItem="SmZ-6Y-R64" secondAttribute="bottom" constant="16" id="o6a-hT-3jX"/>
                         </constraints>
@@ -102,6 +116,7 @@
                         <outlet property="nextButton" destination="lKx-ap-QpO" id="8Au-aa-T1T"/>
                         <outlet property="pageControl" destination="Pjl-gr-OaS" id="IPB-3m-abT"/>
                         <outlet property="prevButton" destination="Rgi-Z1-HD6" id="MOQ-oI-zSd"/>
+                        <outlet property="startButton" destination="TbS-Bw-kbD" id="J0g-Ge-DQX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hPz-uD-vgx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -111,7 +126,7 @@
         <!--Walkthrough Page View Controller-->
         <scene sceneID="oi9-V6-RPO">
             <objects>
-                <viewController storyboardIdentifier="wtPage1" id="OSA-wm-ygm" customClass="BWWalkthroughPageViewController" customModule="FourAce" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="wtPage1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OSA-wm-ygm" customClass="WalkthroughPageViewController" customModule="FourAce" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JxO-rb-wTn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,8 +137,8 @@
                                     <constraint firstAttribute="width" secondItem="Bc1-rF-Eof" secondAttribute="height" multiplier="96:77" id="KFK-YF-0oA"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oyunun amacı dört ası en üstte yanyana getirmektir" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kvm-s1-Vak" userLabel="description_label">
-                                <rect key="frame" x="45" y="329.5" width="230" height="61"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oyunun amacı dört ası en üste getirmektir. Bu asların her biri için 25 puan kazanırsın" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kvm-s1-Vak" userLabel="description_label">
+                                <rect key="frame" x="45" y="330" width="230" height="81"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -140,6 +155,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IbL-45-aD1"/>
                     </view>
+                    <connections>
+                        <outlet property="brief" destination="Kvm-s1-Vak" id="Wex-99-zbi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="90v-U2-Szf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -148,29 +166,41 @@
         <!--Walkthrough Page View Controller-->
         <scene sceneID="yfr-8k-wbD">
             <objects>
-                <viewController storyboardIdentifier="wtPage2" id="Rvu-JO-xwW" customClass="BWWalkthroughPageViewController" customModule="FourAce" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="wtPage2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rvu-JO-xwW" customClass="WalkthroughPageViewController" customModule="FourAce" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wmb-RN-aGR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="walkthrough_1" translatesAutoresizingMaskIntoConstraints="NO" id="Dmj-7T-Opd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="walkthrough_2" translatesAutoresizingMaskIntoConstraints="NO" id="Dmj-7T-Opd">
                                 <rect key="frame" x="8" y="70" width="304" height="243.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Dmj-7T-Opd" secondAttribute="height" multiplier="96:77" id="clT-mJ-sBi"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aynı tip kağıtlardan büyük olan küçük olanı götürür. Örneğin sinek altılıdan, sinek onlu sayesinde kurtulabilirsin!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xWF-gY-a3G" userLabel="description_label">
+                                <rect key="frame" x="45" y="329.5" width="230" height="101.5"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.058823529411764705" green="0.41960784313725491" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Dmj-7T-Opd" firstAttribute="leading" secondItem="B8b-EB-3hI" secondAttribute="leading" constant="8" id="ClU-jJ-VuO"/>
                             <constraint firstItem="Dmj-7T-Opd" firstAttribute="top" secondItem="B8b-EB-3hI" secondAttribute="top" constant="50" id="LJm-rP-6W3"/>
+                            <constraint firstItem="B8b-EB-3hI" firstAttribute="trailing" secondItem="xWF-gY-a3G" secondAttribute="trailing" constant="45" id="XZN-K1-hur"/>
                             <constraint firstItem="B8b-EB-3hI" firstAttribute="trailing" secondItem="Dmj-7T-Opd" secondAttribute="trailing" constant="8" id="h1J-Jh-xU0"/>
+                            <constraint firstItem="xWF-gY-a3G" firstAttribute="leading" secondItem="B8b-EB-3hI" secondAttribute="leading" constant="45" id="uVL-7H-o3s"/>
+                            <constraint firstItem="xWF-gY-a3G" firstAttribute="top" secondItem="Dmj-7T-Opd" secondAttribute="bottom" constant="16" id="yq7-Qg-Esm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="B8b-EB-3hI"/>
                     </view>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="animateAlpha" value="NO"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="brief" destination="xWF-gY-a3G" id="RNy-1N-bau"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m1i-VX-cVc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -179,23 +209,52 @@
         <!--Walkthrough Page View Controller-->
         <scene sceneID="L4R-75-chh">
             <objects>
-                <viewController storyboardIdentifier="wtPage3" id="83E-rN-aWh" customClass="BWWalkthroughPageViewController" customModule="FourAce" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="wtPage3" useStoryboardIdentifierAsRestorationIdentifier="YES" id="83E-rN-aWh" customClass="WalkthroughPageViewController" customModule="FourAce" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2bL-v4-L6p">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="walkthrough_3" translatesAutoresizingMaskIntoConstraints="NO" id="BHy-ds-hYB">
+                                <rect key="frame" x="8" y="70" width="304" height="244"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="BHy-ds-hYB" secondAttribute="height" multiplier="96:77" id="1UY-s1-v2A"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tVY-5Q-nNK" userLabel="description_label">
+                                <rect key="frame" x="45" y="330" width="230" height="121.5"/>
+                                <string key="text">Eğer bir kartın üstünde başka bir kart varsa o kart deaktif durumdadır. Örneğin kupa dörtlüden kurtulmak için ilk önce karo yediden kurtulmalısın </string>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.058823529409999999" green="0.41960784309999999" blue="0.1647058824" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="efa-HO-Bpy" firstAttribute="trailing" secondItem="tVY-5Q-nNK" secondAttribute="trailing" constant="45" id="0Mn-Rp-fSc"/>
+                            <constraint firstItem="efa-HO-Bpy" firstAttribute="trailing" secondItem="BHy-ds-hYB" secondAttribute="trailing" constant="8" id="0ee-nN-cry"/>
+                            <constraint firstItem="tVY-5Q-nNK" firstAttribute="top" secondItem="BHy-ds-hYB" secondAttribute="bottom" constant="16" id="8R7-gN-7ZV"/>
+                            <constraint firstItem="BHy-ds-hYB" firstAttribute="top" secondItem="efa-HO-Bpy" secondAttribute="top" constant="50" id="ZMh-NB-xSB"/>
+                            <constraint firstItem="tVY-5Q-nNK" firstAttribute="leading" secondItem="efa-HO-Bpy" secondAttribute="leading" constant="45" id="qrW-Tc-2cu"/>
+                            <constraint firstItem="BHy-ds-hYB" firstAttribute="leading" secondItem="efa-HO-Bpy" secondAttribute="leading" constant="8" id="zYh-SS-j5o"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="efa-HO-Bpy"/>
                     </view>
+                    <connections>
+                        <outlet property="brief" destination="tVY-5Q-nNK" id="iQH-yb-p6O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fc0-go-i65" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1865.625" y="1081.6901408450703"/>
+            <point key="canvasLocation" x="1865.625" y="1080.6338028169014"/>
         </scene>
     </scenes>
     <resources>
+        <image name="btn_background_2" width="70" height="40"/>
         <image name="close" width="52" height="48"/>
         <image name="next_1" width="30" height="50"/>
         <image name="prev_1" width="30" height="50"/>
         <image name="walkthrough_1" width="231" height="288"/>
+        <image name="walkthrough_2" width="243" height="304"/>
+        <image name="walkthrough_3" width="231" height="288"/>
     </resources>
 </document>

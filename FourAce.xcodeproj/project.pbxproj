@@ -26,6 +26,7 @@
 		07CB7BCB1989524900056F09 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB7BCA1989524900056F09 /* Util.swift */; };
 		07CB7BCD1989598500056F09 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB7BCC1989598500056F09 /* Deck.swift */; };
 		582E150A1FC0ADDB00E2A72A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E15091FC0ADDB00E2A72A /* PageViewController.swift */; };
+		5895A26A1FDDBBB200DBF889 /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5895A2691FDDBBB200DBF889 /* WalkthroughPageViewController.swift */; };
 		58B5CB3B1FC1B1460022C8F8 /* BWWalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B5CB391FC1B1460022C8F8 /* BWWalkthroughPageViewController.swift */; };
 		58B5CB3C1FC1B1460022C8F8 /* BWWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B5CB3A1FC1B1460022C8F8 /* BWWalkthroughViewController.swift */; };
 		58B5CB401FC74ABC0022C8F8 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B5CB3F1FC74ABC0022C8F8 /* WalkthroughViewController.swift */; };
@@ -66,6 +67,7 @@
 		07CB7BCA1989524900056F09 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		07CB7BCC1989598500056F09 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		582E15091FC0ADDB00E2A72A /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		5895A2691FDDBBB200DBF889 /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		58B5CB391FC1B1460022C8F8 /* BWWalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		58B5CB3A1FC1B1460022C8F8 /* BWWalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughViewController.swift; sourceTree = "<group>"; };
 		58B5CB3F1FC74ABC0022C8F8 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				071E9B611B7685F100F0A123 /* AlertView.swift */,
 				582E15091FC0ADDB00E2A72A /* PageViewController.swift */,
 				58B5CB3F1FC74ABC0022C8F8 /* WalkthroughViewController.swift */,
+				5895A2691FDDBBB200DBF889 /* WalkthroughPageViewController.swift */,
 			);
 			path = FourAce;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				073DFBB0198949B700AA02BF /* AppDelegate.swift in Sources */,
 				58B5CB3B1FC1B1460022C8F8 /* BWWalkthroughPageViewController.swift in Sources */,
 				071E9B621B7685F100F0A123 /* AlertView.swift in Sources */,
+				5895A26A1FDDBBB200DBF889 /* WalkthroughPageViewController.swift in Sources */,
 				07CB7BC51989514B00056F09 /* Card.swift in Sources */,
 				58B5CB3C1FC1B1460022C8F8 /* BWWalkthroughViewController.swift in Sources */,
 				0737B1DC1B5594C600C5B6E9 /* DeckNode.swift in Sources */,

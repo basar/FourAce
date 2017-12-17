@@ -15,3 +15,7 @@
 "how_to_play" = "How to play?";
 "how_to_play_instructions" = "The biggest card eliminates the small card(s) in the same suit. Try to place the four aces cards side by side on the top to reach maximum score";
 "make_a_wish" = "Make a wish! :)";
+"walkthrough_brief_1" = "Oyunun amacı dört ası en üste getirmektir. Bu asların her biri için 25 puan kazanırsın";
+"walkthrough_brief_2" = "Aynı tip kağıtlardan büyük olan küçük olanı götürür. Örneğin sinek altılıdan, sinek onlu sayesinde kurtulabilirsin!";
+"walkthrough_brief_3" = "Eğer bir kartın üstünde başka bir kart varsa o kart deaktif durumdadır. Örneğin kupa dörtlüden kurtulmak için ilk önce karo yediden kurtulmalısın";
+"start" = "Start!";

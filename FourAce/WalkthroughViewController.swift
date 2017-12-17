@@ -8,12 +8,23 @@
 
 import UIKit
 
+protocol WalkthroughViewControllerDelegate {
+    func walkthroughStartButtonPressed()
+}
+
 class WalkthroughViewController: BWWalkthroughViewController {
 
+    @IBOutlet weak var startButton: UIButton!
+
+    var delegateWalkthrough:WalkthroughViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.scrollview.bounces=false
+        self.startButton.isHidden = true;
+        self.startButton.setTitle("start".localized, for: UIControlState.normal)
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,6 +37,9 @@ class WalkthroughViewController: BWWalkthroughViewController {
         return UIStatusBarStyle.lightContent;
     }
     
+    @IBAction func startButtonPressed(_ sender: Any) {
+        self.delegateWalkthrough?.walkthroughStartButtonPressed()
+    }
     
     /*
     // MARK: - Navigation
