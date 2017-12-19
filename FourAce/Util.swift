@@ -81,5 +81,12 @@ class Util {
     }
     
     
+    static func isFirstStartOfGame()->Bool {
+        return !UserDefaults.standard.bool(forKey: Constants.firstStartKey)
+    }
+    
+    static func changeGameState(_ value:Bool)->Void {
+        UserDefaults.standard.set(value, forKey: Constants.firstStartKey)
+    }
     
 }

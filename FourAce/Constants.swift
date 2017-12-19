@@ -190,10 +190,11 @@ class Constants {
     
     static let placeHolderMargin:CGFloat = 5;
     
-    static let walkthroughOneId = "wtPage1";
-    static let walkthroughTwoId = "wtPage2";
-    static let walkthroughThreeId = "wtPage3";
+    static let walkthroughOneId = "wtPage1"
+    static let walkthroughTwoId = "wtPage2"
+    static let walkthroughThreeId = "wtPage3"
     
+    static let firstStartKey = "firstStartKey"
 
 }
 

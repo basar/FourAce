@@ -136,8 +136,6 @@ class GameScene: SKScene, FourAceGameDelegate, CardNodeDelegate, ButtonNodeDeleg
         
         //Start game
         FourAceGame.instance.delegate = self;
-        startGame();
-       
     }
     
     func startGame() {

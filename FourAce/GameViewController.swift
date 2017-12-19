@@ -8,12 +8,10 @@
 
 import UIKit
 import SpriteKit
-import iAd
 
+class GameViewController: UIViewController, /* ADBannerViewDelegate,*/ BWWalkthroughViewControllerDelegate,WalkthroughViewControllerDelegate {
 
-class GameViewController: UIViewController, ADBannerViewDelegate, BWWalkthroughViewControllerDelegate,WalkthroughViewControllerDelegate {
-
-    fileprivate var bannerView:ADBannerView?;
+    //fileprivate var bannerView:ADBannerView?;
     
     var walkthroughController:WalkthroughViewController!;
     
@@ -36,17 +34,26 @@ class GameViewController: UIViewController, ADBannerViewDelegate, BWWalkthroughV
         
         skView.presentScene(self.gameScene)
         
-        bannerView = ADBannerView(frame: CGRect.zero)
-        bannerView!.autoresizingMask = UIViewAutoresizing.flexibleWidth;
-        bannerView!.delegate = self;
-        bannerView!.frame = CGRect(x: 0,y: self.view.frame.height - bannerView!.frame.size.height,width: self.view.frame.size.width,height: bannerView!.frame.size.width);
+        if(!Util.isFirstStartOfGame()){
+            self.gameScene.startGame();
+        }
         
-        self.view.addSubview(bannerView!);
+       // bannerView = ADBannerView(frame: CGRect.zero)
+        //bannerView!.autoresizingMask = UIViewAutoresizing.flexibleWidth;
+        //bannerView!.delegate = self;
+        //bannerView!.frame = CGRect(x: 0,y: self.view.frame.height - bannerView!.frame.size.height,width: self.view.frame.size.width,height: bannerView!.frame.size.width);
+        
+        //self.view.addSubview(bannerView!);
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        //if game is new installed, walkthrough screen will be showed
+        if(Util.isFirstStartOfGame()){
+            showWalkthroughScreen();
+        }
                 
     }
     
@@ -54,9 +61,9 @@ class GameViewController: UIViewController, ADBannerViewDelegate, BWWalkthroughV
         
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         self.walkthroughController = storyBoard.instantiateViewController(withIdentifier: "wtContainer") as! WalkthroughViewController
-        let pageOne = storyBoard.instantiateViewController(withIdentifier: "wtPage1")
-        let pageTwo = storyBoard.instantiateViewController(withIdentifier: "wtPage2")
-        let pageThree = storyBoard.instantiateViewController(withIdentifier: "wtPage3")
+        let pageOne = storyBoard.instantiateViewController(withIdentifier: Constants.walkthroughOneId)
+        let pageTwo = storyBoard.instantiateViewController(withIdentifier: Constants.walkthroughTwoId)
+        let pageThree = storyBoard.instantiateViewController(withIdentifier: Constants.walkthroughThreeId)
 
         self.walkthroughController.delegate = self
         self.walkthroughController.delegateWalkthrough = self;
@@ -87,6 +94,7 @@ class GameViewController: UIViewController, ADBannerViewDelegate, BWWalkthroughV
     override func viewWillLayoutSubviews() {
     }
     
+    /**
     func bannerViewDidLoadAd(_ banner: ADBannerView!) {
         bannerView!.isHidden = false;
     }
@@ -102,14 +110,23 @@ class GameViewController: UIViewController, ADBannerViewDelegate, BWWalkthroughV
     func bannerViewActionDidFinish(_ banner: ADBannerView!) {
         
     }
-
+     **/
 }
 
 
 extension GameViewController {
     
     func walkthroughCloseButtonPressed() {
-        self.dismiss(animated: true, completion: nil)
+        
+        self.dismiss(animated: true, completion: {
+           
+        })
+        
+        if(Util.isFirstStartOfGame()){
+            Util.changeGameState(true)
+            self.gameScene.startGame();
+        }
+        
         self.gameScene.doUnpauseTimer();
     }
     
@@ -124,8 +141,6 @@ extension GameViewController {
     }
     
     func walkthroughStartButtonPressed() {
-        self.dismiss(animated: true, completion: nil)
-        self.gameScene.doUnpauseTimer();
-    }
-    
+        self.walkthroughCloseButtonPressed();
+    }    
 }
