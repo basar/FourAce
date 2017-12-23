@@ -24,6 +24,7 @@
 		07CB7BC7198951DF00056F09 /* FourAceGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB7BC6198951DF00056F09 /* FourAceGame.swift */; };
 		07CB7BCB1989524900056F09 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB7BCA1989524900056F09 /* Util.swift */; };
 		07CB7BCD1989598500056F09 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB7BCC1989598500056F09 /* Deck.swift */; };
+		505925958F24281F6CC8A23E /* Pods_FourAce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8CA9150BC0AB00F73659909 /* Pods_FourAce.framework */; };
 		582E150A1FC0ADDB00E2A72A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E15091FC0ADDB00E2A72A /* PageViewController.swift */; };
 		5895A26A1FDDBBB200DBF889 /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5895A2691FDDBBB200DBF889 /* WalkthroughPageViewController.swift */; };
 		58B5CB3B1FC1B1460022C8F8 /* BWWalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B5CB391FC1B1460022C8F8 /* BWWalkthroughPageViewController.swift */; };
@@ -71,6 +72,8 @@
 		58F9A1D31FEEDE1900531D25 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 078298AF1B597CD700DD92AF /* Images.xcassets */; };
 		58F9A1D41FEEDE1900531D25 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 076451761B8A3D9E0058136D /* Localizable.strings */; };
 		58F9A1D51FEEDE1900531D25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073DFBB7198949B700AA02BF /* Main.storyboard */; };
+		624A46779060BA5756C768F6 /* Pods_FourAce_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B5C0F1B36337C44FFE4EB81 /* Pods_FourAce_Test.framework */; };
+		D5932F458655443F08FDB850 /* Pods_FourAce_Prod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB9C22666D33FDEBB40328A5 /* Pods_FourAce_Prod.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +109,8 @@
 		07CB7BC6198951DF00056F09 /* FourAceGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourAceGame.swift; sourceTree = "<group>"; };
 		07CB7BCA1989524900056F09 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		07CB7BCC1989598500056F09 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		20896A5BD01643B8E7D2C363 /* Pods-FourAce Prod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FourAce Prod.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FourAce Prod/Pods-FourAce Prod.debug.xcconfig"; sourceTree = "<group>"; };
+		4B5C0F1B36337C44FFE4EB81 /* Pods_FourAce_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FourAce_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		582E15091FC0ADDB00E2A72A /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		5895A2691FDDBBB200DBF889 /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		58B5CB391FC1B1460022C8F8 /* BWWalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughPageViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +121,13 @@
 		58FD7FF01DE0982500A4ED0B /* FourAce-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FourAce-Bridging-Header.h"; sourceTree = "<group>"; };
 		58FD7FF11DE0982500A4ED0B /* FourAceTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FourAceTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		58FD800D1DE1A58700A4ED0B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A930A52BBAC050432DB9866C /* Pods-FourAce.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FourAce.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FourAce/Pods-FourAce.debug.xcconfig"; sourceTree = "<group>"; };
+		BB9C22666D33FDEBB40328A5 /* Pods_FourAce_Prod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FourAce_Prod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C416B7EE2EB1C466A9770594 /* Pods-FourAce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FourAce.release.xcconfig"; path = "Pods/Target Support Files/Pods-FourAce/Pods-FourAce.release.xcconfig"; sourceTree = "<group>"; };
+		D9862EA9B342132F3E6A1B0A /* Pods-FourAce Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FourAce Test.release.xcconfig"; path = "Pods/Target Support Files/Pods-FourAce Test/Pods-FourAce Test.release.xcconfig"; sourceTree = "<group>"; };
+		E8CA9150BC0AB00F73659909 /* Pods_FourAce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FourAce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5F2351DD8EFE51DAE86E980 /* Pods-FourAce Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FourAce Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FourAce Test/Pods-FourAce Test.debug.xcconfig"; sourceTree = "<group>"; };
+		FF27742D46D321A8A45801BB /* Pods-FourAce Prod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FourAce Prod.release.xcconfig"; path = "Pods/Target Support Files/Pods-FourAce Prod/Pods-FourAce Prod.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				505925958F24281F6CC8A23E /* Pods_FourAce.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				624A46779060BA5756C768F6 /* Pods_FourAce_Test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5932F458655443F08FDB850 /* Pods_FourAce_Prod.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +175,7 @@
 				58FD7FED1DE0949C00A4ED0B /* Frameworks */,
 				58FD7FF01DE0982500A4ED0B /* FourAce-Bridging-Header.h */,
 				58FD7FF11DE0982500A4ED0B /* FourAceTests-Bridging-Header.h */,
+				E60F7F3451564C46DF32D06E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -238,8 +254,24 @@
 			isa = PBXGroup;
 			children = (
 				0764517A1B8A49410058136D /* iAd.framework */,
+				E8CA9150BC0AB00F73659909 /* Pods_FourAce.framework */,
+				BB9C22666D33FDEBB40328A5 /* Pods_FourAce_Prod.framework */,
+				4B5C0F1B36337C44FFE4EB81 /* Pods_FourAce_Test.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E60F7F3451564C46DF32D06E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A930A52BBAC050432DB9866C /* Pods-FourAce.debug.xcconfig */,
+				C416B7EE2EB1C466A9770594 /* Pods-FourAce.release.xcconfig */,
+				20896A5BD01643B8E7D2C363 /* Pods-FourAce Prod.debug.xcconfig */,
+				FF27742D46D321A8A45801BB /* Pods-FourAce Prod.release.xcconfig */,
+				F5F2351DD8EFE51DAE86E980 /* Pods-FourAce Test.debug.xcconfig */,
+				D9862EA9B342132F3E6A1B0A /* Pods-FourAce Test.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,9 +281,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 073DFBCA198949B800AA02BF /* Build configuration list for PBXNativeTarget "FourAce" */;
 			buildPhases = (
+				63AAD62971ECFCCED128304B /* [CP] Check Pods Manifest.lock */,
 				073DFBA6198949B700AA02BF /* Sources */,
 				073DFBA7198949B700AA02BF /* Frameworks */,
 				073DFBA8198949B700AA02BF /* Resources */,
+				6007F01BA343B99310A10A24 /* [CP] Embed Pods Frameworks */,
+				55E5085B61485FC2AEAD8576 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -284,9 +319,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58F9A1B81FEEDCD500531D25 /* Build configuration list for PBXNativeTarget "FourAce Test" */;
 			buildPhases = (
+				6FBC809B165DF70CB5126C53 /* [CP] Check Pods Manifest.lock */,
 				58F9A19F1FEEDCD500531D25 /* Sources */,
 				58F9A1B21FEEDCD500531D25 /* Frameworks */,
 				58F9A1B31FEEDCD500531D25 /* Resources */,
+				EE1EB30956882A7CCB58B8FB /* [CP] Embed Pods Frameworks */,
+				731247D6843A089160251C7C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -301,9 +339,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58F9A1D61FEEDE1900531D25 /* Build configuration list for PBXNativeTarget "FourAce Prod" */;
 			buildPhases = (
+				29EC72AE477F9394271273CC /* [CP] Check Pods Manifest.lock */,
 				58F9A1BE1FEEDE1900531D25 /* Sources */,
 				58F9A1D11FEEDE1900531D25 /* Frameworks */,
 				58F9A1D21FEEDE1900531D25 /* Resources */,
+				81148666B796A2E7C379C5E3 /* [CP] Embed Pods Frameworks */,
+				4565C3F1999E02CFC82266EB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -408,6 +449,153 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		29EC72AE477F9394271273CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FourAce Prod-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4565C3F1999E02CFC82266EB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FourAce Prod/Pods-FourAce Prod-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55E5085B61485FC2AEAD8576 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FourAce/Pods-FourAce-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6007F01BA343B99310A10A24 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FourAce/Pods-FourAce-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63AAD62971ECFCCED128304B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FourAce-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FBC809B165DF70CB5126C53 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FourAce Test-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		731247D6843A089160251C7C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FourAce Test/Pods-FourAce Test-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81148666B796A2E7C379C5E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FourAce Prod/Pods-FourAce Prod-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE1EB30956882A7CCB58B8FB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FourAce Test/Pods-FourAce Test-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		073DFBA6198949B700AA02BF /* Sources */ = {
@@ -614,6 +802,7 @@
 		};
 		073DFBCB198949B800AA02BF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A930A52BBAC050432DB9866C /* Pods-FourAce.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -637,6 +826,7 @@
 		};
 		073DFBCC198949B800AA02BF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C416B7EE2EB1C466A9770594 /* Pods-FourAce.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -696,6 +886,7 @@
 		};
 		58F9A1B91FEEDCD500531D25 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5F2351DD8EFE51DAE86E980 /* Pods-FourAce Test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -719,6 +910,7 @@
 		};
 		58F9A1BA1FEEDCD500531D25 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9862EA9B342132F3E6A1B0A /* Pods-FourAce Test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -741,6 +933,7 @@
 		};
 		58F9A1D71FEEDE1900531D25 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20896A5BD01643B8E7D2C363 /* Pods-FourAce Prod.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -764,6 +957,7 @@
 		};
 		58F9A1D81FEEDE1900531D25 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF27742D46D321A8A45801BB /* Pods-FourAce Prod.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
