@@ -9,9 +9,7 @@
 import UIKit
 import SpriteKit
 
-class GameViewController: UIViewController, /* ADBannerViewDelegate,*/ BWWalkthroughViewControllerDelegate,WalkthroughViewControllerDelegate {
-
-    //fileprivate var bannerView:ADBannerView?;
+class GameViewController: UIViewController, BWWalkthroughViewControllerDelegate, WalkthroughViewControllerDelegate {
     
     var walkthroughController:WalkthroughViewController!;
     
@@ -22,7 +20,7 @@ class GameViewController: UIViewController, /* ADBannerViewDelegate,*/ BWWalkthr
         super.viewDidLoad()
         
         let screenSize:CGSize = Util.isIPhone4OrLess() ? UIScreen.main.bounds.size : CGSize(width: 320, height: 568);
-     
+        
         self.gameScene = GameScene(size: screenSize,viewController:self);
         self.gameScene.scaleMode = .aspectFill
         
@@ -38,13 +36,6 @@ class GameViewController: UIViewController, /* ADBannerViewDelegate,*/ BWWalkthr
             self.gameScene.startGame();
         }
         
-       // bannerView = ADBannerView(frame: CGRect.zero)
-        //bannerView!.autoresizingMask = UIViewAutoresizing.flexibleWidth;
-        //bannerView!.delegate = self;
-        //bannerView!.frame = CGRect(x: 0,y: self.view.frame.height - bannerView!.frame.size.height,width: self.view.frame.size.width,height: bannerView!.frame.size.width);
-        
-        //self.view.addSubview(bannerView!);
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -54,7 +45,7 @@ class GameViewController: UIViewController, /* ADBannerViewDelegate,*/ BWWalkthr
         if(Util.isFirstStartOfGame()){
             showWalkthroughScreen();
         }
-                
+        
     }
     
     func showWalkthroughScreen () {
@@ -64,7 +55,7 @@ class GameViewController: UIViewController, /* ADBannerViewDelegate,*/ BWWalkthr
         let pageOne = storyBoard.instantiateViewController(withIdentifier: Constants.walkthroughOneId)
         let pageTwo = storyBoard.instantiateViewController(withIdentifier: Constants.walkthroughTwoId)
         let pageThree = storyBoard.instantiateViewController(withIdentifier: Constants.walkthroughThreeId)
-
+        
         self.walkthroughController.delegate = self
         self.walkthroughController.delegateWalkthrough = self;
         self.walkthroughController.add(viewController:pageOne)
@@ -81,36 +72,19 @@ class GameViewController: UIViewController, /* ADBannerViewDelegate,*/ BWWalkthr
     }
     
     /**
-    override func prefersStatusBarHidden() -> Bool {
-        return false
-    }
-    **/
+     override func prefersStatusBarHidden() -> Bool {
+     return false
+     }
+     **/
     
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return UIStatusBarStyle.lightContent;
     }
-
-
+    
+    
     override func viewWillLayoutSubviews() {
     }
     
-    /**
-    func bannerViewDidLoadAd(_ banner: ADBannerView!) {
-        bannerView!.isHidden = false;
-    }
-    
-    func bannerView(_ banner: ADBannerView!, didFailToReceiveAdWithError error: Error!) {
-        bannerView!.isHidden = true;
-    }
-    
-    func bannerViewActionShouldBegin(_ banner: ADBannerView!, willLeaveApplication willLeave: Bool) -> Bool {
-        return true;
-    }
-    
-    func bannerViewActionDidFinish(_ banner: ADBannerView!) {
-        
-    }
-     **/
 }
 
 
@@ -119,7 +93,7 @@ extension GameViewController {
     func walkthroughCloseButtonPressed() {
         
         self.dismiss(animated: true, completion: {
-           
+            //Do nothing
         })
         
         if(Util.isFirstStartOfGame()){
@@ -142,5 +116,6 @@ extension GameViewController {
     
     func walkthroughStartButtonPressed() {
         self.walkthroughCloseButtonPressed();
-    }    
+    }
 }
+

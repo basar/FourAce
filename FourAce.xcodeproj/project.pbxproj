@@ -19,7 +19,6 @@
 		073DFBC7198949B800AA02BF /* FourAceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DFBC6198949B800AA02BF /* FourAceTests.swift */; };
 		076451711B8A38DA0058136D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076451701B8A38DA0058136D /* Constants.swift */; };
 		076451791B8A3D9E0058136D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 076451761B8A3D9E0058136D /* Localizable.strings */; };
-		0764517B1B8A49410058136D /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0764517A1B8A49410058136D /* iAd.framework */; };
 		078298B01B597CD700DD92AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 078298AF1B597CD700DD92AF /* Images.xcassets */; };
 		07CB7BC51989514B00056F09 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB7BC41989514B00056F09 /* Card.swift */; };
 		07CB7BC7198951DF00056F09 /* FourAceGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB7BC6198951DF00056F09 /* FourAceGame.swift */; };
@@ -30,6 +29,48 @@
 		58B5CB3B1FC1B1460022C8F8 /* BWWalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B5CB391FC1B1460022C8F8 /* BWWalkthroughPageViewController.swift */; };
 		58B5CB3C1FC1B1460022C8F8 /* BWWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B5CB3A1FC1B1460022C8F8 /* BWWalkthroughViewController.swift */; };
 		58B5CB401FC74ABC0022C8F8 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B5CB3F1FC74ABC0022C8F8 /* WalkthroughViewController.swift */; };
+		58F9A1A01FEEDCD500531D25 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB7BCC1989598500056F09 /* Deck.swift */; };
+		58F9A1A11FEEDCD500531D25 /* CardNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0737B1D71B52816A00C5B6E9 /* CardNode.swift */; };
+		58F9A1A21FEEDCD500531D25 /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071E9B5D1B71489200F0A123 /* ButtonNode.swift */; };
+		58F9A1A31FEEDCD500531D25 /* FourAceGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB7BC6198951DF00056F09 /* FourAceGame.swift */; };
+		58F9A1A41FEEDCD500531D25 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DFBB3198949B700AA02BF /* GameScene.swift */; };
+		58F9A1A51FEEDCD500531D25 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E15091FC0ADDB00E2A72A /* PageViewController.swift */; };
+		58F9A1A61FEEDCD500531D25 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DFBB5198949B700AA02BF /* GameViewController.swift */; };
+		58F9A1A71FEEDCD500531D25 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB7BCA1989524900056F09 /* Util.swift */; };
+		58F9A1A81FEEDCD500531D25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DFBAF198949B700AA02BF /* AppDelegate.swift */; };
+		58F9A1A91FEEDCD500531D25 /* BWWalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B5CB391FC1B1460022C8F8 /* BWWalkthroughPageViewController.swift */; };
+		58F9A1AA1FEEDCD500531D25 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071E9B611B7685F100F0A123 /* AlertView.swift */; };
+		58F9A1AB1FEEDCD500531D25 /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5895A2691FDDBBB200DBF889 /* WalkthroughPageViewController.swift */; };
+		58F9A1AC1FEEDCD500531D25 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB7BC41989514B00056F09 /* Card.swift */; };
+		58F9A1AD1FEEDCD500531D25 /* BWWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B5CB3A1FC1B1460022C8F8 /* BWWalkthroughViewController.swift */; };
+		58F9A1AE1FEEDCD500531D25 /* DeckNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0737B1DB1B5594C600C5B6E9 /* DeckNode.swift */; };
+		58F9A1AF1FEEDCD500531D25 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076451701B8A38DA0058136D /* Constants.swift */; };
+		58F9A1B01FEEDCD500531D25 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B5CB3F1FC74ABC0022C8F8 /* WalkthroughViewController.swift */; };
+		58F9A1B11FEEDCD500531D25 /* CardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0737B1D91B52867000C5B6E9 /* CardStack.swift */; };
+		58F9A1B51FEEDCD500531D25 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 078298AF1B597CD700DD92AF /* Images.xcassets */; };
+		58F9A1B61FEEDCD500531D25 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 076451761B8A3D9E0058136D /* Localizable.strings */; };
+		58F9A1B71FEEDCD500531D25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073DFBB7198949B700AA02BF /* Main.storyboard */; };
+		58F9A1BF1FEEDE1900531D25 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB7BCC1989598500056F09 /* Deck.swift */; };
+		58F9A1C01FEEDE1900531D25 /* CardNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0737B1D71B52816A00C5B6E9 /* CardNode.swift */; };
+		58F9A1C11FEEDE1900531D25 /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071E9B5D1B71489200F0A123 /* ButtonNode.swift */; };
+		58F9A1C21FEEDE1900531D25 /* FourAceGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB7BC6198951DF00056F09 /* FourAceGame.swift */; };
+		58F9A1C31FEEDE1900531D25 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DFBB3198949B700AA02BF /* GameScene.swift */; };
+		58F9A1C41FEEDE1900531D25 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E15091FC0ADDB00E2A72A /* PageViewController.swift */; };
+		58F9A1C51FEEDE1900531D25 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DFBB5198949B700AA02BF /* GameViewController.swift */; };
+		58F9A1C61FEEDE1900531D25 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB7BCA1989524900056F09 /* Util.swift */; };
+		58F9A1C71FEEDE1900531D25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DFBAF198949B700AA02BF /* AppDelegate.swift */; };
+		58F9A1C81FEEDE1900531D25 /* BWWalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B5CB391FC1B1460022C8F8 /* BWWalkthroughPageViewController.swift */; };
+		58F9A1C91FEEDE1900531D25 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071E9B611B7685F100F0A123 /* AlertView.swift */; };
+		58F9A1CA1FEEDE1900531D25 /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5895A2691FDDBBB200DBF889 /* WalkthroughPageViewController.swift */; };
+		58F9A1CB1FEEDE1900531D25 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB7BC41989514B00056F09 /* Card.swift */; };
+		58F9A1CC1FEEDE1900531D25 /* BWWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B5CB3A1FC1B1460022C8F8 /* BWWalkthroughViewController.swift */; };
+		58F9A1CD1FEEDE1900531D25 /* DeckNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0737B1DB1B5594C600C5B6E9 /* DeckNode.swift */; };
+		58F9A1CE1FEEDE1900531D25 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076451701B8A38DA0058136D /* Constants.swift */; };
+		58F9A1CF1FEEDE1900531D25 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B5CB3F1FC74ABC0022C8F8 /* WalkthroughViewController.swift */; };
+		58F9A1D01FEEDE1900531D25 /* CardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0737B1D91B52867000C5B6E9 /* CardStack.swift */; };
+		58F9A1D31FEEDE1900531D25 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 078298AF1B597CD700DD92AF /* Images.xcassets */; };
+		58F9A1D41FEEDE1900531D25 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 076451761B8A3D9E0058136D /* Localizable.strings */; };
+		58F9A1D51FEEDE1900531D25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073DFBB7198949B700AA02BF /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +90,6 @@
 		0737B1D91B52867000C5B6E9 /* CardStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStack.swift; sourceTree = "<group>"; };
 		0737B1DB1B5594C600C5B6E9 /* DeckNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckNode.swift; sourceTree = "<group>"; };
 		073DFBAA198949B700AA02BF /* FourAce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FourAce.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		073DFBAE198949B700AA02BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		073DFBAF198949B700AA02BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		073DFBB3198949B700AA02BF /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		073DFBB5198949B700AA02BF /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +111,8 @@
 		58B5CB391FC1B1460022C8F8 /* BWWalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		58B5CB3A1FC1B1460022C8F8 /* BWWalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughViewController.swift; sourceTree = "<group>"; };
 		58B5CB3F1FC74ABC0022C8F8 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
+		58F9A1BB1FEEDCD500531D25 /* FourAce Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FourAce Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58F9A1D91FEEDE1900531D25 /* FourAce Prod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FourAce Prod.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58FD7FF01DE0982500A4ED0B /* FourAce-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FourAce-Bridging-Header.h"; sourceTree = "<group>"; };
 		58FD7FF11DE0982500A4ED0B /* FourAceTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FourAceTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		58FD800D1DE1A58700A4ED0B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -81,11 +123,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0764517B1B8A49410058136D /* iAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		073DFBBD198949B800AA02BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58F9A1B21FEEDCD500531D25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58F9A1D11FEEDE1900531D25 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -113,6 +168,8 @@
 			children = (
 				073DFBAA198949B700AA02BF /* FourAce.app */,
 				073DFBC0198949B800AA02BF /* FourAceTests.xctest */,
+				58F9A1BB1FEEDCD500531D25 /* FourAce Test.app */,
+				58F9A1D91FEEDE1900531D25 /* FourAce Prod.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,7 +187,7 @@
 				073DFBB3198949B700AA02BF /* GameScene.swift */,
 				073DFBB5198949B700AA02BF /* GameViewController.swift */,
 				073DFBB7198949B700AA02BF /* Main.storyboard */,
-				073DFBAD198949B700AA02BF /* Supporting Files */,
+				58F9A19D1FEEDC9D00531D25 /* Resources */,
 				0737B1D71B52816A00C5B6E9 /* CardNode.swift */,
 				0737B1DB1B5594C600C5B6E9 /* DeckNode.swift */,
 				071E9B5D1B71489200F0A123 /* ButtonNode.swift */,
@@ -140,14 +197,6 @@
 				5895A2691FDDBBB200DBF889 /* WalkthroughPageViewController.swift */,
 			);
 			path = FourAce;
-			sourceTree = "<group>";
-		};
-		073DFBAD198949B700AA02BF /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				073DFBAE198949B700AA02BF /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		073DFBC3198949B800AA02BF /* FourAceTests */ = {
@@ -176,6 +225,13 @@
 				0737B1D91B52867000C5B6E9 /* CardStack.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		58F9A19D1FEEDC9D00531D25 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		58FD7FED1DE0949C00A4ED0B /* Frameworks */ = {
@@ -224,6 +280,40 @@
 			productReference = 073DFBC0198949B800AA02BF /* FourAceTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		58F9A19E1FEEDCD500531D25 /* FourAce Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58F9A1B81FEEDCD500531D25 /* Build configuration list for PBXNativeTarget "FourAce Test" */;
+			buildPhases = (
+				58F9A19F1FEEDCD500531D25 /* Sources */,
+				58F9A1B21FEEDCD500531D25 /* Frameworks */,
+				58F9A1B31FEEDCD500531D25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FourAce Test";
+			productName = FourAce;
+			productReference = 58F9A1BB1FEEDCD500531D25 /* FourAce Test.app */;
+			productType = "com.apple.product-type.application";
+		};
+		58F9A1BD1FEEDE1900531D25 /* FourAce Prod */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58F9A1D61FEEDE1900531D25 /* Build configuration list for PBXNativeTarget "FourAce Prod" */;
+			buildPhases = (
+				58F9A1BE1FEEDE1900531D25 /* Sources */,
+				58F9A1D11FEEDE1900531D25 /* Frameworks */,
+				58F9A1D21FEEDE1900531D25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FourAce Prod";
+			productName = FourAce;
+			productReference = 58F9A1D91FEEDE1900531D25 /* FourAce Prod.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -239,11 +329,20 @@
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = 2H7MWN5M5C;
 						LastSwiftMigration = 0810;
+						ProvisioningStyle = Manual;
 					};
 					073DFBBF198949B800AA02BF = {
 						CreatedOnToolsVersion = 6.0;
 						LastSwiftMigration = 0810;
 						TestTargetID = 073DFBA9198949B700AA02BF;
+					};
+					58F9A19E1FEEDCD500531D25 = {
+						DevelopmentTeam = 2H7MWN5M5C;
+						ProvisioningStyle = Manual;
+					};
+					58F9A1BD1FEEDE1900531D25 = {
+						DevelopmentTeam = 2H7MWN5M5C;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -264,6 +363,8 @@
 			targets = (
 				073DFBA9198949B700AA02BF /* FourAce */,
 				073DFBBF198949B800AA02BF /* FourAceTests */,
+				58F9A19E1FEEDCD500531D25 /* FourAce Test */,
+				58F9A1BD1FEEDE1900531D25 /* FourAce Prod */,
 			);
 		};
 /* End PBXProject section */
@@ -283,6 +384,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58F9A1B31FEEDCD500531D25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58F9A1B51FEEDCD500531D25 /* Images.xcassets in Resources */,
+				58F9A1B61FEEDCD500531D25 /* Localizable.strings in Resources */,
+				58F9A1B71FEEDCD500531D25 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58F9A1D21FEEDE1900531D25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58F9A1D31FEEDE1900531D25 /* Images.xcassets in Resources */,
+				58F9A1D41FEEDE1900531D25 /* Localizable.strings in Resources */,
+				58F9A1D51FEEDE1900531D25 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +440,56 @@
 			buildActionMask = 2147483647;
 			files = (
 				073DFBC7198949B800AA02BF /* FourAceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58F9A19F1FEEDCD500531D25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58F9A1A01FEEDCD500531D25 /* Deck.swift in Sources */,
+				58F9A1A11FEEDCD500531D25 /* CardNode.swift in Sources */,
+				58F9A1A21FEEDCD500531D25 /* ButtonNode.swift in Sources */,
+				58F9A1A31FEEDCD500531D25 /* FourAceGame.swift in Sources */,
+				58F9A1A41FEEDCD500531D25 /* GameScene.swift in Sources */,
+				58F9A1A51FEEDCD500531D25 /* PageViewController.swift in Sources */,
+				58F9A1A61FEEDCD500531D25 /* GameViewController.swift in Sources */,
+				58F9A1A71FEEDCD500531D25 /* Util.swift in Sources */,
+				58F9A1A81FEEDCD500531D25 /* AppDelegate.swift in Sources */,
+				58F9A1A91FEEDCD500531D25 /* BWWalkthroughPageViewController.swift in Sources */,
+				58F9A1AA1FEEDCD500531D25 /* AlertView.swift in Sources */,
+				58F9A1AB1FEEDCD500531D25 /* WalkthroughPageViewController.swift in Sources */,
+				58F9A1AC1FEEDCD500531D25 /* Card.swift in Sources */,
+				58F9A1AD1FEEDCD500531D25 /* BWWalkthroughViewController.swift in Sources */,
+				58F9A1AE1FEEDCD500531D25 /* DeckNode.swift in Sources */,
+				58F9A1AF1FEEDCD500531D25 /* Constants.swift in Sources */,
+				58F9A1B01FEEDCD500531D25 /* WalkthroughViewController.swift in Sources */,
+				58F9A1B11FEEDCD500531D25 /* CardStack.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58F9A1BE1FEEDE1900531D25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58F9A1BF1FEEDE1900531D25 /* Deck.swift in Sources */,
+				58F9A1C01FEEDE1900531D25 /* CardNode.swift in Sources */,
+				58F9A1C11FEEDE1900531D25 /* ButtonNode.swift in Sources */,
+				58F9A1C21FEEDE1900531D25 /* FourAceGame.swift in Sources */,
+				58F9A1C31FEEDE1900531D25 /* GameScene.swift in Sources */,
+				58F9A1C41FEEDE1900531D25 /* PageViewController.swift in Sources */,
+				58F9A1C51FEEDE1900531D25 /* GameViewController.swift in Sources */,
+				58F9A1C61FEEDE1900531D25 /* Util.swift in Sources */,
+				58F9A1C71FEEDE1900531D25 /* AppDelegate.swift in Sources */,
+				58F9A1C81FEEDE1900531D25 /* BWWalkthroughPageViewController.swift in Sources */,
+				58F9A1C91FEEDE1900531D25 /* AlertView.swift in Sources */,
+				58F9A1CA1FEEDE1900531D25 /* WalkthroughPageViewController.swift in Sources */,
+				58F9A1CB1FEEDE1900531D25 /* Card.swift in Sources */,
+				58F9A1CC1FEEDE1900531D25 /* BWWalkthroughViewController.swift in Sources */,
+				58F9A1CD1FEEDE1900531D25 /* DeckNode.swift in Sources */,
+				58F9A1CE1FEEDE1900531D25 /* Constants.swift in Sources */,
+				58F9A1CF1FEEDE1900531D25 /* WalkthroughViewController.swift in Sources */,
+				58F9A1D01FEEDE1900531D25 /* CardStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,13 +620,15 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2H7MWN5M5C;
 				INFOPLIST_FILE = FourAce/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.basarc.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.basarcetinkaya.fourace;
 				PRODUCT_NAME = FourAce;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "257a0e42-c947-4c66-a45c-31ebabe0267d";
+				PROVISIONING_PROFILE_SPECIFIER = "Four Ace Dev Cert";
 				SWIFT_OBJC_BRIDGING_HEADER = "FourAce-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -469,14 +642,16 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2H7MWN5M5C;
 				INFOPLIST_FILE = FourAce/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.basarc.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.basarcetinkaya.fourace;
 				PRODUCT_NAME = FourAce;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "8bb838f6-e0dd-4b48-8492-f2b0c689ab05";
+				PROVISIONING_PROFILE_SPECIFIER = "Four Ace Distribution";
 				SWIFT_OBJC_BRIDGING_HEADER = "FourAce-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
@@ -519,6 +694,96 @@
 			};
 			name = Release;
 		};
+		58F9A1B91FEEDCD500531D25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 2H7MWN5M5C;
+				INFOPLIST_FILE = "FourAceTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.basarcetinkaya.fourace;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "257a0e42-c947-4c66-a45c-31ebabe0267d";
+				PROVISIONING_PROFILE_SPECIFIER = "Four Ace Dev Cert";
+				SWIFT_OBJC_BRIDGING_HEADER = "FourAce-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		58F9A1BA1FEEDCD500531D25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 2H7MWN5M5C;
+				INFOPLIST_FILE = "FourAceTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.basarcetinkaya.fourace;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8bb838f6-e0dd-4b48-8492-f2b0c689ab05";
+				PROVISIONING_PROFILE_SPECIFIER = "Four Ace Distribution";
+				SWIFT_OBJC_BRIDGING_HEADER = "FourAce-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		58F9A1D71FEEDE1900531D25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 2H7MWN5M5C;
+				INFOPLIST_FILE = "FourAceProd-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.basarcetinkaya.fourace;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "257a0e42-c947-4c66-a45c-31ebabe0267d";
+				PROVISIONING_PROFILE_SPECIFIER = "Four Ace Dev Cert";
+				SWIFT_OBJC_BRIDGING_HEADER = "FourAce-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		58F9A1D81FEEDE1900531D25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 2H7MWN5M5C;
+				INFOPLIST_FILE = "FourAceProd-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.basarcetinkaya.fourace;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8bb838f6-e0dd-4b48-8492-f2b0c689ab05";
+				PROVISIONING_PROFILE_SPECIFIER = "Four Ace Distribution";
+				SWIFT_OBJC_BRIDGING_HEADER = "FourAce-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -545,6 +810,24 @@
 			buildConfigurations = (
 				073DFBCE198949B800AA02BF /* Debug */,
 				073DFBCF198949B800AA02BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58F9A1B81FEEDCD500531D25 /* Build configuration list for PBXNativeTarget "FourAce Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58F9A1B91FEEDCD500531D25 /* Debug */,
+				58F9A1BA1FEEDCD500531D25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58F9A1D61FEEDE1900531D25 /* Build configuration list for PBXNativeTarget "FourAce Prod" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58F9A1D71FEEDE1900531D25 /* Debug */,
+				58F9A1D81FEEDE1900531D25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
