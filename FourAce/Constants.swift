@@ -195,6 +195,17 @@ class Constants {
     static let walkthroughThreeId = "wtPage3"
     
     static let firstStartKey = "firstStartKey"
+    
+    
+    
+    struct AdMob {
+        
+        static let AppId = Bundle.main.object(forInfoDictionaryKey: "AdMobAppId") as! String
+        static let BannerUnitId = Bundle.main.object(forInfoDictionaryKey: "AdBannerUnitId") as! String
+        
+    }
+    
+  
 
 }
 

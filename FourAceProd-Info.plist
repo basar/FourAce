@@ -2,6 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AdBannerUnitId</key>
+	<string>ca-app-pub-3352679263456487/4098114656
+ca-app-pub-3352679263456487/4098114656</string>
+	<key>AdMobAppId</key>
+	<string>ca-app-pub-3352679263456487~5672595363</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>

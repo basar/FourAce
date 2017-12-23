@@ -26,6 +26,9 @@
 		07CB7BCD1989598500056F09 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB7BCC1989598500056F09 /* Deck.swift */; };
 		505925958F24281F6CC8A23E /* Pods_FourAce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8CA9150BC0AB00F73659909 /* Pods_FourAce.framework */; };
 		582E150A1FC0ADDB00E2A72A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E15091FC0ADDB00E2A72A /* PageViewController.swift */; };
+		583DD0E01FEEEAB5002CCB43 /* FourAceTest-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 583DD0DF1FEEEAB5002CCB43 /* FourAceTest-Info.plist */; };
+		583DD0E21FEEEB10002CCB43 /* FourAceProd-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 583DD0E11FEEEB10002CCB43 /* FourAceProd-Info.plist */; };
+		583DD0E41FEEF2E8002CCB43 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 583DD0E31FEEF2E8002CCB43 /* Info.plist */; };
 		5895A26A1FDDBBB200DBF889 /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5895A2691FDDBBB200DBF889 /* WalkthroughPageViewController.swift */; };
 		58B5CB3B1FC1B1460022C8F8 /* BWWalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B5CB391FC1B1460022C8F8 /* BWWalkthroughPageViewController.swift */; };
 		58B5CB3C1FC1B1460022C8F8 /* BWWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B5CB3A1FC1B1460022C8F8 /* BWWalkthroughViewController.swift */; };
@@ -112,6 +115,9 @@
 		20896A5BD01643B8E7D2C363 /* Pods-FourAce Prod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FourAce Prod.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FourAce Prod/Pods-FourAce Prod.debug.xcconfig"; sourceTree = "<group>"; };
 		4B5C0F1B36337C44FFE4EB81 /* Pods_FourAce_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FourAce_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		582E15091FC0ADDB00E2A72A /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		583DD0DF1FEEEAB5002CCB43 /* FourAceTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FourAceTest-Info.plist"; sourceTree = SOURCE_ROOT; };
+		583DD0E11FEEEB10002CCB43 /* FourAceProd-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FourAceProd-Info.plist"; sourceTree = SOURCE_ROOT; };
+		583DD0E31FEEF2E8002CCB43 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5895A2691FDDBBB200DBF889 /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		58B5CB391FC1B1460022C8F8 /* BWWalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		58B5CB3A1FC1B1460022C8F8 /* BWWalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughViewController.swift; sourceTree = "<group>"; };
@@ -246,6 +252,9 @@
 		58F9A19D1FEEDC9D00531D25 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				583DD0E31FEEF2E8002CCB43 /* Info.plist */,
+				583DD0E11FEEEB10002CCB43 /* FourAceProd-Info.plist */,
+				583DD0DF1FEEEAB5002CCB43 /* FourAceTest-Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -415,6 +424,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				583DD0E41FEEF2E8002CCB43 /* Info.plist in Resources */,
 				078298B01B597CD700DD92AF /* Images.xcassets in Resources */,
 				076451791B8A3D9E0058136D /* Localizable.strings in Resources */,
 				073DFBB9198949B700AA02BF /* Main.storyboard in Resources */,
@@ -434,6 +444,7 @@
 			files = (
 				58F9A1B51FEEDCD500531D25 /* Images.xcassets in Resources */,
 				58F9A1B61FEEDCD500531D25 /* Localizable.strings in Resources */,
+				583DD0E01FEEEAB5002CCB43 /* FourAceTest-Info.plist in Resources */,
 				58F9A1B71FEEDCD500531D25 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,6 +456,7 @@
 				58F9A1D31FEEDE1900531D25 /* Images.xcassets in Resources */,
 				58F9A1D41FEEDE1900531D25 /* Localizable.strings in Resources */,
 				58F9A1D51FEEDE1900531D25 /* Main.storyboard in Resources */,
+				583DD0E21FEEEB10002CCB43 /* FourAceProd-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
