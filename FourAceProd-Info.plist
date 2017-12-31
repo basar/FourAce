@@ -3,8 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>AdBannerUnitId</key>
-	<string>ca-app-pub-3352679263456487/4098114656
-ca-app-pub-3352679263456487/4098114656</string>
+	<string>ca-app-pub-3352679263456487/4098114656</string>
 	<key>AdMobAppId</key>
 	<string>ca-app-pub-3352679263456487~5672595363</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -22,7 +21,7 @@ ca-app-pub-3352679263456487/4098114656</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.01</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
